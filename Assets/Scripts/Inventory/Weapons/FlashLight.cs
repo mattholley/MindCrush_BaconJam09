@@ -8,6 +8,7 @@ public class FlashLight : WeaponItem
 	void Start () 
 	{
 		m_light = GetComponentInChildren<Light>();
+		m_lightCollider = GetComponentInChildren<Collider>();
 	}
 	
 	// Update is called once per frame
@@ -34,7 +35,7 @@ public class FlashLight : WeaponItem
 	{
 		base.Enable();
 		m_light.color = Color.magenta;
-        m_cEmittedLight.GetComponent<QuickAndDirtyHitCheck>().ToggleLightCollider();
+		m_lightCollider.enabled = true;
 	}
 
 	protected override void Disable()
@@ -42,12 +43,13 @@ public class FlashLight : WeaponItem
 		base.Disable();
 		m_light.enabled = true;
         m_light.color = Color.white;
-        m_cEmittedLight.GetComponent<QuickAndDirtyHitCheck>().ToggleLightCollider();
+		m_lightCollider.enabled = false;
 	}
-
-    private Light m_light;
+	
+	private Light m_light;
+	private Collider m_lightCollider;
 	private float m_strobeTimer = 0.0f;
 
     public float m_strobeTimerMax = 0.02f;
-    public GameObject m_cEmittedLight;
+    public GameObject m_emittedLight;
 }
