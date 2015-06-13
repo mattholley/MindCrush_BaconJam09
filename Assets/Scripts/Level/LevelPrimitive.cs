@@ -38,8 +38,8 @@ public class LevelPrimitive : MonoBehaviour {
 		}
 	}
 
-	void GenerateMonsters(int monstersInLevel) {
-		for (int i = 0; i <= monstersInLevel; i++){
+	void GenerateMonsters(int level) {
+		for (int i = 0; i <= level; i++){
 			Vector3 spawnPos = GetRandomPositionInBounds(prefabBounds);
 			int selectedMonster = Random.Range(0, monsterPrefab.Length);
 			GameObject newPrefab = (GameObject)Instantiate(monsterPrefab[selectedMonster], spawnPos, Quaternion.identity);
