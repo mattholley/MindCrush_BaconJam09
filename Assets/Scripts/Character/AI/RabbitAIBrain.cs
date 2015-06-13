@@ -110,12 +110,14 @@ public class RabbitAIBrain : AIBrain {
         Vector3 target = m_Target.transform.position;
 
 		//[Matt] This will need to be smoother
-        transform.LookAt(target);
+        //transform.LookAt(target);
 
 		Vector3 distance = target - transform.position;
-		Vector2 direction = new Vector2(distance.x, distance.z) * m_nSpeed;
+		Vector2 distance2D = new Vector2(distance.x, distance.z);
 
-		m_characterBehavior.SetVelocity(ref direction);
+		Vector2 direction = (distance2D.sqrMagnitude > 2.0f) ? distance2D * m_nSpeed : Vector2.zero;
+		//m_characterBehavior.SetVelocity(ref direction);
+
         CheckTargetDistance();
     }
 
@@ -125,7 +127,7 @@ public class RabbitAIBrain : AIBrain {
 
     void CheckTargetDistance()
     {
-        if(Vector3.Distance(m_Target.transform.position, gameObject.transform.position) <= 10)
+        if(Vector2.Distance(m_Target.transform.position, gameObject.transform.position) <= 10)
         {
             m_CState = State.COMBAT;
         }
