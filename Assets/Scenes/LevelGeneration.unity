@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treeRate: 10
-  monsterRate: 1
+  monsterRate: .25
 --- !u!4 &2140013071
 Transform:
   m_ObjectHideFlags: 0
