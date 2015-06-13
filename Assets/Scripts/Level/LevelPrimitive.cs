@@ -6,15 +6,14 @@ public class LevelPrimitive : MonoBehaviour {
 	public GameObject treeFab;
 	public GameObject monsterPrefab;
 	public GameObject groundPrefab;
-	public int testLevel = 150;
 
 	private Bounds prefabBounds;
 
 	// Use this for initialization
 	void Start () {
 		prefabBounds = groundPrefab.GetComponent<Renderer>().bounds;
-		GenerateTrees(testLevel);
-		GenerateMonsters(testLevel);
+		GenerateTrees(GameVars.GetMonsterLevel());
+		GenerateMonsters(GameVars.GetTreeLevel());
 	}
 	
 	// Update is called once per frame
