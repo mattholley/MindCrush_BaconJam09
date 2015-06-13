@@ -4,7 +4,7 @@ using System.Collections;
 public class LevelPrimitive : MonoBehaviour {
 
 	public GameObject treeFab;
-	public GameObject monsterPrefab;
+	public GameObject[] monsterPrefab;
 	public GameObject groundPrefab;
 
 	private Bounds prefabBounds;
@@ -38,7 +38,13 @@ public class LevelPrimitive : MonoBehaviour {
 		}
 	}
 
-	void GenerateMonsters(int level) {
-
+	void GenerateMonsters(int monstersInLevel) {
+		for (int i = 0; i <= monstersInLevel; i++){
+			Vector3 spawnPos = GetRandomPositionInBounds(prefabBounds);
+			int selectedMonster = Random.Range(0, monsterPrefab.Length);
+			GameObject newPrefab = (GameObject)Instantiate(monsterPrefab[selectedMonster], spawnPos, Quaternion.identity);
+			newPrefab.transform.parent = transform;
+		}
+	
 	}
 }
