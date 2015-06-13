@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 2001288012}
-  m_followDistance: 2
-  m_smoothing: 1
+  m_followDistance: 15
+  m_smoothing: .300000012
 --- !u!1 &1884057554
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +283,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2053672, guid: a1bf094c3069cde479cc7502dac799ea, type: 2}
       propertyPath: orthographic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1bf094c3069cde479cc7502dac799ea, type: 2}
