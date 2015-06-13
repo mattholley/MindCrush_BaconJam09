@@ -13,7 +13,6 @@ public class GhostAIBrain : AIBrain
     protected override void Update()
     {
         base.Update();
-        CheckHealth();
     }
 
 	protected override void IdleState()
@@ -34,14 +33,6 @@ public class GhostAIBrain : AIBrain
 	protected override void DeadState()
     {
 		base.DeadState();
-    }
-
-    void CheckHealth()
-    {
-        if(m_health < 1)
-        {
-            SetState(State.DEAD);
-        }
     }
 
     [Header("Ghost Specific Properties")]

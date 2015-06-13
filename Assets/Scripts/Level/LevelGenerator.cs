@@ -45,7 +45,7 @@ public class LevelGenerator : MonoBehaviour {
 			
 			foreach (Transform child in transform)
 			{
-				child.Translate(0.0f, 0.0f, -threshold);
+				child.Translate(0.0f, 0.0f, -threshold, Space.World);
 			}
 
 			return true;

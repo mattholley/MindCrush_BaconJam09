@@ -132,6 +132,7 @@ public class AIBrain : MonoBehaviour
 	
 	protected virtual void DeadState()
 	{
+		Destroy(gameObject);
 	}
 
 	protected virtual void PursueState()
@@ -175,10 +176,12 @@ public class AIBrain : MonoBehaviour
 	protected GameObject m_target;
 	private GameObject m_sensors;
 
+	private float m_health;
+
 	//[Matt] May need to move/remove some of this
 	[Header("Character Base Stats")]
 	public bool m_isActive = true;
-	public float m_health;
+	public float health { get { return m_health; } set { m_health = value; if(m_health <= 0.0f) { SetState (State.DEAD); } } }
 	public string m_sname;
 	public string m_action;
 	public string m_creatureType;
