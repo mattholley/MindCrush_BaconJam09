@@ -5,11 +5,11 @@ public class GameVars : MonoBehaviour {
 
 	public static int GameLevel;
 
-	public int treeRate;
-	public int monsterRate;
+	public float treeRate;
+	public float monsterRate;
 
-	static int treeLevel;
-	static int monsterLevel;
+	static float treeLevel;
+	static float monsterLevel;
 
 	// Use this for initialization
 	void Start () {
@@ -35,12 +35,12 @@ public class GameVars : MonoBehaviour {
 		LevelGenerator.OnNewLevelPrimitve -= AddToGameLevel;
 	}
 
-	public static int GetMonsterLevel() {
+	public static float GetMonsterLevel() {
 
 		return monsterLevel;
 	}
 
-	public static int GetTreeLevel() {
+	public static float GetTreeLevel() {
 		
 		return treeLevel;
 	}
