@@ -137,6 +137,15 @@ public class RabbitAIBrain : AIBrain {
         }
     }
 
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "DirtyWay")
+        {
+            Debug.Log("Touched by:" + other.gameObject.name);
+        }
+    }
+
     [Header("Rabbit Specific Properties")]
     public GameObject m_Target;
     public List<string> m_CSkills;
