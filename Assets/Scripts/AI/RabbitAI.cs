@@ -22,7 +22,7 @@ public class RabbitAI : BaseCharacter {
         m_nIdleTime = 0.0f;
         m_nIdleTimer = 5.0f;
         m_nGravity = 1000.0f;
-        m_CNavMesh = gameObject.GetComponent<NavMeshAgent>();
+        m_Target = GameObject.Find("Player");
     }
 
     void Update()
@@ -84,7 +84,7 @@ public class RabbitAI : BaseCharacter {
         if(m_CCurrentWaypoint < m_CWaypoints.Count)
         {
             m_strCAction = "Set Wandering Target";
-            Vector3 target = m_CWaypoints[m_CCurrentWaypoint].position; ;
+            Vector3 target = m_CWaypoints[m_CCurrentWaypoint].position;
             m_strCAction = "Keeping Target at Character Height";
             target.y = transform.position.y;
             m_strCAction = "Set Movement Direction";
@@ -111,15 +111,34 @@ public class RabbitAI : BaseCharacter {
             m_CCurrentWaypoint = 0;
             m_strCAction = "Current Waypoint Reset";
         }
+        CheckTargetDistance();
     }
 
     void CombatState()
     {
-
+        m_strCAction = "dududududuuduududududuududu";
+        Vector3 target = m_Target.transform.position;
+        target.y = transform.position.y;
+        transform.LookAt(target);
+        Vector3 moveDirection = target - transform.position;
+        m_CCharacterController.Move(moveDirection.normalized * m_nSpeed * Time.deltaTime);
+        CheckTargetDistance();
     }
 
     void DeadState()
     {
+    }
+
+    void CheckTargetDistance()
+    {
+        if(Vector3.Distance(m_Target.transform.position, gameObject.transform.position) <= 10)
+        {
+            m_CState = State.COMBAT;
+        }
+        else
+        {
+            m_CState = State.WANDER;
+        }
     }
 
     [Header("Rabbit Specific Properties")]

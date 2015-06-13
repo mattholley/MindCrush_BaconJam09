@@ -32,7 +32,6 @@ public class BaseCharacter : MonoBehaviour {
     public State m_CState;
 
     [Header("AI Specific Properties")]
-    public NavMeshAgent m_CNavMesh;
     public List<Transform> m_CWaypoints;
     public int m_CCurrentWaypoint;
     public CharacterController m_CCharacterController;
