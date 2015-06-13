@@ -494,17 +494,17 @@ GameObject:
   - 4: {fileID: 467296}
   - 95: {fileID: 9568690}
   - 143: {fileID: 14340580}
+  - 135: {fileID: 13540688}
   - 114: {fileID: 11437828}
   - 114: {fileID: 11410542}
   - 114: {fileID: 11449802}
-  - 65: {fileID: 6558898}
   m_Layer: 0
   m_Name: Rabbit
   m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &167532
 GameObject:
   m_ObjectHideFlags: 1
@@ -1216,7 +1216,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169514}
-  m_LocalRotation: {x: -.304908127, y: .619646668, z: .649640143, w: -.317862988}
+  m_LocalRotation: {x: -.304908097, y: .619646609, z: .649640083, w: -.317862958}
   m_LocalPosition: {x: -.131966591, y: -.170538664, z: -.000482064061}
   m_LocalScale: {x: 1.00000024, y: 1.0000006, z: 1.00000024}
   m_Children: []
@@ -1395,18 +1395,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 4051b1e58554de141864d3a46abf8b52, type: 3}
---- !u!65 &6558898
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 162722}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9568690
 Animator:
   serializedVersion: 3
@@ -1528,6 +1516,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &13540688
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.23000002
+  m_Center: {x: 0, y: 1.13, z: 0}
 --- !u!137 &13709692
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
