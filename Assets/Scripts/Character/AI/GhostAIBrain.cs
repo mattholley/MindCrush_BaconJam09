@@ -145,6 +145,21 @@ public class GhostAIBrain : AIBrain
         }
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "DirtyWay")
+        {
+            Debug.Log("Touched by:" + other.gameObject.name);
+            PlayHit();
+        }
+    }
+
+    void PlayHit()
+    {
+        m_CState = State.DEAD;
+    }
+
+
     [Header("Ghost Specific Properties")]
     public GameObject m_Target;
     public List<string> m_CSkills;
