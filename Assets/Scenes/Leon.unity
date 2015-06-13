@@ -397,28 +397,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 482107853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee7f7f7375ad0da439e57466ff7d66e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 62661c1551ef9214fb347c64b9d3dfb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_bIsActive: 0
-  m_nCHealth: 0
-  m_nSpeed: 0
-  m_nGravity: 0
-  m_strCName: 
+  m_nCHealth: 10000
+  m_nSpeed: .5
+  m_strCName: Mr. Rabbit Squad
   m_strCAction: 
-  m_strCreatureType: 
-  m_CState: 0
-  m_CWaypoints:
-  - {fileID: 1601248708}
-  - {fileID: 1877784090}
-  - {fileID: 1516978360}
-  - {fileID: 1049172958}
+  m_strCreatureType: Rabbit
+  m_CState: 2
+  m_CWaypoints: []
   m_CCurrentWaypoint: 0
-  m_CCharacterController: {fileID: 0}
-  m_nIdleTimer: 0
+  m_nIdleTimer: 5
   m_nIdleTime: 0
   m_Target: {fileID: 0}
   m_CSkills: []
+--- !u!114 &482107859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 482107853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8c49be3b5a042438f8f9a251269c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &482107860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 482107853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e86856cd599ee4c972641b46c605b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tempInventoryItemPrefab: {fileID: 0}
+  m_aimTarget: {x: 0, y: 0, z: 0}
+  m_moveSpeed: 30
+  m_jumpForce: 1
+  m_friction: .300000012
+  m_gravity: 9.81000042
 --- !u!1001 &501337632
 Prefab:
   m_ObjectHideFlags: 0

@@ -2,34 +2,23 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class RabbitAI : BaseCharacter {
+public class RabbitAIBrain : AIBrain {
 
-    void Start()
+    protected override void Start()
     {
-        Init();
-    }
+		base.Start();
 
-    void Init()
-    {
-        m_bIsActive = true;
-        m_nCHealth = 10000;
-        m_nSpeed = 5;
-        m_strCName = "Mr. Rabbit Squad";
-        m_strCAction = "Spawned";
-        m_strCreatureType = "Rabbit";
-        m_CState = State.IDLE;
-        m_CCharacterController = gameObject.GetComponent<CharacterController>();
-        m_nIdleTime = 0.0f;
-        m_nIdleTimer = 5.0f;
-        m_nGravity = 1000.0f;
-        m_Target = GameObject.Find("Player");
-    }
+		m_bIsActive = true;
+		m_strCAction = "Spawned";
+		m_Target = GameObject.Find("Player");
+	}
+	
+	protected override void Update()
+	{
+		base.Update();
 
-    void Update()
-    {
-        if(m_bIsActive)
+		if(m_bIsActive)
         {
-            m_strCAction = "Is Active";
             switch (m_CState)
             {
                 case State.IDLE:
@@ -80,48 +69,53 @@ public class RabbitAI : BaseCharacter {
 
     void WanderState()
     {
-        m_strCAction = "Wandering";
         if(m_CCurrentWaypoint < m_CWaypoints.Count)
         {
-            m_strCAction = "Set Wandering Target";
-            Vector3 target = m_CWaypoints[m_CCurrentWaypoint].position;
-            m_strCAction = "Keeping Target at Character Height";
-            target.y = transform.position.y;
-            m_strCAction = "Set Movement Direction";
-            Vector3 moveDirection = target - transform.position;
-            m_strCAction = "Moving";
-            if(moveDirection.magnitude < 0.4f)
+			//Get distance to waypoint
+				//If waypoint is within distance, go to next waypoint
+				//Else
+					//Get direction to waypoint
+					//Move in direction
+					//If colliding with obstacle and not at waypoint
+						//Jump
+
+            Vector3 target = m_CWaypoints[m_CCurrentWaypoint].position;     
+            Vector3 distance = target - transform.position;
+
+			//If close enough to the waypoint, go to the next one
+			if(distance.magnitude < 0.4f)
             {
-                m_strCAction = "Forced Movement";
                 transform.position = target;
-                m_CCurrentWaypoint++;
+                ++m_CCurrentWaypoint;
             }
             else
             {
-                m_strCAction = "Smooth Movement";
+				//[Matt] This will need to be smoother
                 transform.LookAt(target);
-                moveDirection.y -= m_nGravity * Time.deltaTime;
-                m_CCharacterController.Move(moveDirection.normalized * m_nSpeed * Time.deltaTime);
+
+				Vector2 direction = new Vector2(distance.x, distance.z) * m_nSpeed;
+				m_characterBehavior.SetVelocity(ref direction);
             }
-            m_strCAction = "Movement Complete";
         }
         else
         {
             m_CState = State.IDLE;
             m_CCurrentWaypoint = 0;
-            m_strCAction = "Current Waypoint Reset";
         }
         CheckTargetDistance();
     }
 
     void CombatState()
     {
-        m_strCAction = "dududududuuduududududuududu";
         Vector3 target = m_Target.transform.position;
-        target.y = transform.position.y;
+
+		//[Matt] This will need to be smoother
         transform.LookAt(target);
-        Vector3 moveDirection = target - transform.position;
-        m_CCharacterController.Move(moveDirection.normalized * m_nSpeed * Time.deltaTime);
+
+		Vector3 distance = target - transform.position;
+		Vector2 direction = new Vector2(distance.x, distance.z) * m_nSpeed;
+
+		m_characterBehavior.SetVelocity(ref direction);
         CheckTargetDistance();
     }
 
