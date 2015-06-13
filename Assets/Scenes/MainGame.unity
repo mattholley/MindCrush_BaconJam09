@@ -326,10 +326,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 426884391}
     m_Modifications:
-    - target: {fileID: 11414872, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
-      propertyPath: m_waypoints.Array.size
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 487844, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
       propertyPath: m_LocalPosition.x
       value: -7.58763504
@@ -362,46 +358,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 11414872, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
-      propertyPath: m_waypoints.Array.data[10]
-      value: 
-      objectReference: {fileID: 328515809}
-    - target: {fileID: 11414872, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
-      propertyPath: m_waypoints.Array.data[11]
-      value: 
-      objectReference: {fileID: 2092677975}
-    - target: {fileID: 11414872, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
-      propertyPath: m_waypoints.Array.data[12]
-      value: 
-      objectReference: {fileID: 119756935}
-    - target: {fileID: 11414872, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
-      propertyPath: m_waypoints.Array.data[13]
-      value: 
-      objectReference: {fileID: 1049172958}
-    - target: {fileID: 11414872, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
-      propertyPath: m_waypoints.Array.data[14]
-      value: 
-      objectReference: {fileID: 220451133}
-    - target: {fileID: 11414872, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
-      propertyPath: m_waypoints.Array.data[15]
-      value: 
-      objectReference: {fileID: 1516978360}
-    - target: {fileID: 11414872, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
-      propertyPath: m_waypoints.Array.data[16]
-      value: 
-      objectReference: {fileID: 1867320959}
-    - target: {fileID: 11414872, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
-      propertyPath: m_waypoints.Array.data[17]
-      value: 
-      objectReference: {fileID: 1877784090}
-    - target: {fileID: 11414872, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
-      propertyPath: m_waypoints.Array.data[18]
-      value: 
-      objectReference: {fileID: 2094342799}
-    - target: {fileID: 11414872, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
-      propertyPath: m_waypoints.Array.data[19]
-      value: 
-      objectReference: {fileID: 1601248708}
     - target: {fileID: 11414872, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
       propertyPath: m_waypoints.Array.data[0]
       value: 

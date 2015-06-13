@@ -45,7 +45,16 @@ public class FlashLight : WeaponItem
         m_light.color = Color.white;
 		m_lightCollider.enabled = false;
 	}
-	
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.tag == "Monster")
+		{
+			AIBrain brain = other.gameObject.GetComponent<AIBrain>();
+			brain.health -= 20000.0f;
+		}
+	}
+
 	private Light m_light;
 	private Collider m_lightCollider;
 	private float m_strobeTimer = 0.0f;

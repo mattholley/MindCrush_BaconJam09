@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AI
   - Light
+  - Monster
   layers:
   - Default
   - TransparentFX
