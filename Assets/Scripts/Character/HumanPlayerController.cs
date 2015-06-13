@@ -6,7 +6,7 @@ public class HumanPlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		m_playerBehavior = GetComponent<PlayerBehavior>();
+		m_playerBehavior = GetComponent<HumanBehavior>();
 		m_controller = GetComponent<CharacterController>();
 	}
 	
@@ -38,6 +38,6 @@ public class HumanPlayerController : MonoBehaviour {
 		m_playerBehavior.SetVelocity(ref direction);
 	}
 
-	private PlayerBehavior m_playerBehavior;
+	private HumanBehavior m_playerBehavior;
 	private CharacterController m_controller;
 }

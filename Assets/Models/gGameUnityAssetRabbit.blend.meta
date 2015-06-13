@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: b27b323029aec764a9bff40f4db48af5
+timeCreated: 1434173402
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature_002
+    100002: BackFootControlLeft
+    100004: BackFootControlRight
+    100006: BackFootCTRL
+    100008: BackFootCTRL_002
+    100010: BackFootIKLeft
+    100012: BackFootIKRight
+    100014: BackHeelRowLeft
+    100016: BackHeelRowRight
+    100018: BackToeRollLeft
+    100020: BackToeRollRight
+    100022: Cylinder
+    100024: FootControlL
+    100026: FootControlR
+    100028: FootIKLeft
+    100030: FootIKRight
+    100032: FootRollCTRL
+    100034: FootRollCTRR
+    100036: //RootNode
+    100038: Head
+    100040: HeadIK
+    100042: HeadMaster
+    100044: HeelRowL
+    100046: HeelRowR
+    100048: LFeet
+    100050: LFeet_001
+    100052: LowerLeft
+    100054: LowerLeft_001
+    100056: LowerRight
+    100058: LowerRight_001
+    100060: Neck
+    100062: RFeet_003
+    100064: RFeet_004
+    100066: Root
+    100068: Root_002
+    100070: ShoulderLeft
+    100072: ShoulderLeft_001
+    100074: ShoulderRight
+    100076: ShoulderRight_001
+    100078: Spine1
+    100080: ToeRollL
+    100082: ToeRollR
+    100084: UpperLeft
+    100086: UpperLeft_001
+    100088: UpperRight
+    100090: UpperRight_001
+    400000: Armature_002
+    400002: BackFootControlLeft
+    400004: BackFootControlRight
+    400006: BackFootCTRL
+    400008: BackFootCTRL_002
+    400010: BackFootIKLeft
+    400012: BackFootIKRight
+    400014: BackHeelRowLeft
+    400016: BackHeelRowRight
+    400018: BackToeRollLeft
+    400020: BackToeRollRight
+    400022: Cylinder
+    400024: FootControlL
+    400026: FootControlR
+    400028: FootIKLeft
+    400030: FootIKRight
+    400032: FootRollCTRL
+    400034: FootRollCTRR
+    400036: //RootNode
+    400038: Head
+    400040: HeadIK
+    400042: HeadMaster
+    400044: HeelRowL
+    400046: HeelRowR
+    400048: LFeet
+    400050: LFeet_001
+    400052: LowerLeft
+    400054: LowerLeft_001
+    400056: LowerRight
+    400058: LowerRight_001
+    400060: Neck
+    400062: RFeet_003
+    400064: RFeet_004
+    400066: Root
+    400068: Root_002
+    400070: ShoulderLeft
+    400072: ShoulderLeft_001
+    400074: ShoulderRight
+    400076: ShoulderRight_001
+    400078: Spine1
+    400080: ToeRollL
+    400082: ToeRollR
+    400084: UpperLeft
+    400086: UpperLeft_001
+    400088: UpperRight
+    400090: UpperRight_001
+    4300000: Cylinder
+    7400000: Default Take
+    9500000: //RootNode
+    13700000: Cylinder
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
