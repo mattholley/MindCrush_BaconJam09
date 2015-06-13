@@ -9,6 +9,7 @@ public class FlashLight : WeaponItem
 	{
 		m_light = GetComponentInChildren<Light>();
 		m_lightCollider = GetComponentInChildren<Collider>();
+		m_lightCollider.enabled = false;
 	}
 	
 	// Update is called once per frame
