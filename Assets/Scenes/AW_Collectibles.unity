@@ -95,6 +95,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1383581388}
+  - 65: {fileID: 1383581389}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Untagged
@@ -114,6 +115,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!65 &1383581389
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1383581387}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1398799490
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,10 +236,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1538942994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3941b5e59a852e409fc57b0b3a8d3a1, type: 3}
+  m_Script: {fileID: 11500000, guid: d8c4d02c50709fb4aa24ba45042b0787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temp_player: {fileID: 1383581387}
+  temp_player: {fileID: 1383581389}
 --- !u!4 &1538942996
 Transform:
   m_ObjectHideFlags: 0
