@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 414694}
   - 114: {fileID: 11484146}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sensors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   - 4: {fileID: 440340}
   - 64: {fileID: 6413888}
   - 114: {fileID: 11417308}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VisualSensors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,9 +497,10 @@ GameObject:
   - 114: {fileID: 11437828}
   - 114: {fileID: 11410542}
   - 114: {fileID: 11449802}
+  - 65: {fileID: 6558898}
   m_Layer: 0
   m_Name: Rabbit
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -679,7 +680,7 @@ GameObject:
   - 4: {fileID: 479566}
   - 114: {fileID: 11462032}
   - 135: {fileID: 13504934}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AwarenessSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1201,7 +1202,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5999999, y: 6.93470903e-17, z: -20.4899998}
+  m_LocalPosition: {x: -5.5999999, y: 0, z: -20.4899998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 479236}
@@ -1394,6 +1395,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 4051b1e58554de141864d3a46abf8b52, type: 3}
+--- !u!65 &6558898
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9568690
 Animator:
   serializedVersion: 3
@@ -1449,7 +1462,17 @@ MonoBehaviour:
   m_sname: 
   m_action: 
   m_creatureType: 
-  m_waypoints: []
+  m_waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_currentWaypointIndex: 0
   m_idleTimeMax: 5
   m_idleTime: 0
@@ -1467,7 +1490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_tempInventoryItemPrefab: {fileID: 0}
   m_aimTarget: {x: 0, y: 0, z: 0}
-  m_moveSpeed: 30
+  m_moveSpeed: 20
   m_jumpForce: 1
   m_friction: .300000012
   m_gravity: 9.81000042
