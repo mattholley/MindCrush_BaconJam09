@@ -105,8 +105,8 @@ MonoBehaviour:
   m_tempInventoryItemPrefab: {fileID: 137048, guid: b5f52ff9ec238f84ea8f98d1aff20107,
     type: 2}
   m_aimTarget: {x: 0, y: 0, z: 0}
-  m_moveSpeed: 1
-  m_friction: .230000004
+  m_moveSpeed: 30
+  m_friction: .300000012
   m_gravity: 9.81000042
 --- !u!114 &11466360
 MonoBehaviour:

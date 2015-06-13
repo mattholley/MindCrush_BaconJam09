@@ -478,14 +478,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 11406962, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-      propertyPath: m_friction
-      value: .300000012
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406962, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-      propertyPath: m_moveSpeed
-      value: 30
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7803ba1002135344cac136a122e676b1, type: 2}
   m_IsPrefabParent: 0
@@ -528,17 +520,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 119454, guid: a1bf094c3069cde479cc7502dac799ea, type: 2}
-      propertyPath: m_Name
-      value: Main Camera
-      objectReference: {fileID: 0}
     - target: {fileID: 11468748, guid: a1bf094c3069cde479cc7502dac799ea, type: 2}
       propertyPath: m_target
       value: 
       objectReference: {fileID: 2001288012}
-    - target: {fileID: 11468748, guid: a1bf094c3069cde479cc7502dac799ea, type: 2}
-      propertyPath: m_followDistance
-      value: 15
+    - target: {fileID: 119454, guid: a1bf094c3069cde479cc7502dac799ea, type: 2}
+      propertyPath: m_Name
+      value: Main Camera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1bf094c3069cde479cc7502dac799ea, type: 2}
