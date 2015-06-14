@@ -57,6 +57,11 @@ public class AIBrain : MonoBehaviour
 					break;
 				}
 			}
+
+			if(m_target)
+			{
+				m_characterBehavior.m_aimTarget = m_target.transform.position;
+			}
 		}
 	}
 
