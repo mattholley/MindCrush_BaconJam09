@@ -70,7 +70,7 @@ public class CharacterBehavior : MonoBehaviour
 
 		m_angularVelocity = crossVal * m_rotateSpeed;
 
-		Debug.Log (m_angularVelocity);
+		//Debug.Log (m_angularVelocity);
 
 		transform.Rotate(new Vector3(0.0f, m_angularVelocity * Time.deltaTime * 10, 0.0f));
 		m_controller.Move(m_velocity);

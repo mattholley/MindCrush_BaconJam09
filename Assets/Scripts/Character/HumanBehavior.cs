@@ -34,7 +34,7 @@ public class HumanBehavior : CharacterBehavior {
 	// Update is called once per frame
 	protected override void Update () {
 		base.Update();
-        Debug.Log(m_hand);
+        //Debug.Log(m_hand);
         m_hand.transform.LookAt(m_aimTarget);
         m_Animator.SetFloat("velocity", m_velocity.magnitude);
 	}
