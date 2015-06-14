@@ -28,7 +28,7 @@ public class CharacterBehavior : MonoBehaviour
 		m_angularVelocity = angularVelocity;
 	}
 
-	public void SetVelocity(Vector2 velocity)
+	public virtual void SetVelocity(Vector2 velocity)
 	{
 		m_velocity.x = velocity.x * m_moveSpeed;
 		m_velocity.z = velocity.y * m_moveSpeed;
@@ -85,7 +85,7 @@ public class CharacterBehavior : MonoBehaviour
 
 	public void GainExperience(int amount){
 		m_experience += amount;
-		while (m_experience > m_expToLevel[m_level]){
+		while (m_experience >= m_expToLevel[m_level]){
 			m_level++;
 		}
 	}
@@ -103,9 +103,14 @@ public class CharacterBehavior : MonoBehaviour
 	public float m_friction = 0.3f;
 	public float m_gravity = 9.81f;
 
+	// Character Statistics
+	public float[] m_knockbackPower;
+	public float[] m_bonusMoveSpeed;
+	public float[] m_weaponPower;
+	public int[] m_health;
+
 	// Player Statistics
-	public int m_level = 1;
+	public int m_level = 0;
 	public int m_experience = 0;
 	public int[] m_expToLevel;
-
 }

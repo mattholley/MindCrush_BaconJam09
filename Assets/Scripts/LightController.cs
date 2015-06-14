@@ -14,7 +14,7 @@ public class LightController : MonoBehaviour {
 	float lightLevelLerpTime = 0.0f;
 	float lightRotationLerpTime = 0.0f;
 
-	float lerpTime = 1.0f;
+	float lerpTime = 15.0f;
 
 	Light thisLight;
 
@@ -25,8 +25,8 @@ public class LightController : MonoBehaviour {
 		LevelGenerator.OnNewLevelPrimitve += UpdateLightLevel;
 		LevelGenerator.OnNewLevelPrimitve += RotateLight;
 
-		prevLightLevel = initialLightIntensity;
-		prevRotation = initialRotation;
+		prevLightLevel = lightLevel = initialLightIntensity;
+		prevRotation = rotation = initialRotation;
 	}
 	
 	// Update is called once per frame
