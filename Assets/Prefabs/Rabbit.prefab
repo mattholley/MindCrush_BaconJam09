@@ -1593,11 +1593,18 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169514}
+<<<<<<< HEAD
   m_LocalRotation: {x: .0235242248, y: .0114839561, z: .898375988, w: -.438446432}
   m_LocalPosition: {x: -.170538679, y: .131966576, z: -.000482064061}
   m_LocalScale: {x: .999913692, y: 1.00000024, z: 1.00008678}
   m_Children:
   - {fileID: 481334}
+=======
+  m_LocalRotation: {x: -.304908127, y: .619646668, z: .649640143, w: -.317862988}
+  m_LocalPosition: {x: -.131966591, y: -.170538664, z: -.000482064061}
+  m_LocalScale: {x: 1.00000024, y: 1.0000006, z: 1.00000024}
+  m_Children: []
+>>>>>>> 78963e4317bb6ecd77be8d94906d235cb7c9d064
   m_Father: {fileID: 428954}
   m_RootOrder: 0
 --- !u!4 &469604
@@ -1837,16 +1844,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9a6e8b444547e49a1fb756d4248ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_isActive: 1
   m_sname: Mr. Bunny Black
   m_action: 
   m_creatureType: Rabbit
+=======
+  m_isActive: 0
+  m_sname: 
+  m_action: 
+  m_creatureType: 
+>>>>>>> 78963e4317bb6ecd77be8d94906d235cb7c9d064
   m_steerSpeed: 5
   m_idleTimeMax: 5
   m_wanderSteerTimeMax: 1
   m_wanderMoveTimeMax: 0
   m_stateTimer: 0
+<<<<<<< HEAD
   m_deathEffect: {fileID: 169064, guid: c1e786b83dd430d4da2dae9b8c045045, type: 2}
+=======
+  m_skills: []
+>>>>>>> 78963e4317bb6ecd77be8d94906d235cb7c9d064
 --- !u!114 &11449802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2015,7 +2033,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 2e644c6d081b30b4397176badf49f54f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 162722}
