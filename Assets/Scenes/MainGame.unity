@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 77585352}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ Transform:
   - {fileID: 2020916941}
   - {fileID: 356907587}
   - {fileID: 311747248}
-  m_Father: {fileID: 426884391}
+  m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!1 &119756934
 GameObject:
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 311747248}
   - 64: {fileID: 311747249}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 356907587}
   - 64: {fileID: 356907588}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 403581384}
   - 64: {fileID: 403581385}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,9 +435,23 @@ Transform:
   - {fileID: 1991095772}
   - {fileID: 2063754423}
   - {fileID: 2001288013}
-  - {fileID: 77585352}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1 &446224942 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 119454, guid: a1bf094c3069cde479cc7502dac799ea, type: 2}
+  m_PrefabInternal: {fileID: 1901906488}
+--- !u!114 &446224943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 446224942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d93c112f691f64439f157c3bff8a8f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1049172957
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,48 +556,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1991095772}
   m_RootOrder: 2
---- !u!1001 &1437294166
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 426884391}
-    m_Modifications:
-    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -.0500000007
-      objectReference: {fileID: 0}
-    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1516978359
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +659,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f677b24c7168a242978cead87b25b30, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1698700597
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 426884391}
+    m_Modifications:
+    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7803ba1002135344cac136a122e676b1, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1703532805
 GameObject:
@@ -985,11 +999,11 @@ Transform:
 --- !u!1 &2001288012 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 143942, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-  m_PrefabInternal: {fileID: 1437294166}
+  m_PrefabInternal: {fileID: 1698700597}
 --- !u!4 &2001288013 stripped
 Transform:
   m_PrefabParentObject: {fileID: 464616, guid: 7803ba1002135344cac136a122e676b1, type: 2}
-  m_PrefabInternal: {fileID: 1437294166}
+  m_PrefabInternal: {fileID: 1698700597}
 --- !u!1 &2020916940
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1013,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2020916941}
   - 64: {fileID: 2020916942}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
