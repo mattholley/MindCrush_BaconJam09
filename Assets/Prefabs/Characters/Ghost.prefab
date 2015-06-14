@@ -234,7 +234,13 @@ MonoBehaviour:
   m_wanderMoveTimeMax: 0
   m_stateTimer: 0
   m_dropTable:
+  - {fileID: 187344, guid: 0e76639db92b1a34b9298430a1ab95e4, type: 2}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_guaranteedDrops:
+  - {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
   m_itemDropped: 0
   m_deathEffect: {fileID: 169064, guid: c1e786b83dd430d4da2dae9b8c045045, type: 2}
 --- !u!114 &11428558
@@ -303,8 +309,9 @@ MonoBehaviour:
   m_knockbackPower: []
   m_bonusMoveSpeed: []
   m_weaponPower: []
-  m_health: 03000000030000000400000004000000050000000500000006000000060000000700000007000000080000000800000009000000090000000a0000000a0000000b0000000c0000000d0000000e000000
-  m_level: 1
+  m_maxHealth: 64000000
+  m_currentHealth: 100
+  m_level: 0
   m_experience: 0
   m_expToLevel: 
 --- !u!114 &11497692
@@ -1452,6 +1459,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_dropTable.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxHealth.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_guaranteedDrops.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -1481,8 +1496,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_dropTable.Array.data[0]
       value: 
-      objectReference: {fileID: 11401104, guid: 27cace28c9dd8e74185a18b35c9333ee,
-        type: 2}
+      objectReference: {fileID: 187344, guid: 0e76639db92b1a34b9298430a1ab95e4, type: 2}
     - target: {fileID: 0}
       propertyPath: m_health.Array.data[0]
       value: 3
@@ -1597,6 +1611,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_guaranteedDrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_maxHealth.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_currentHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_level
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_itemDropped
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
