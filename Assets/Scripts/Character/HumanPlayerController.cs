@@ -11,8 +11,8 @@ public class HumanPlayerController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () 
-	{
+    void Update()
+    {
         if (!m_playerBehavior.isDead)
         {
             //Aim
@@ -41,7 +41,7 @@ public class HumanPlayerController : MonoBehaviour {
 
             m_playerBehavior.SetVelocity(direction);
         }
-	}
+    }
 
 	private HumanBehavior m_playerBehavior;
 	private CharacterController m_controller;
