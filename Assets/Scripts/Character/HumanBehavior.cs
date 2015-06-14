@@ -32,8 +32,6 @@ public class HumanBehavior : CharacterBehavior {
         m_hand.transform.LookAt(m_aimTarget);
         m_Animator.SetFloat("velocity", m_velocity.magnitude);
 	}
-	
-    private Animator m_Animator;
 
 	public override void SetVelocity(Vector2 velocity)
 	{
