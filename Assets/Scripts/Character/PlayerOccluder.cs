@@ -41,7 +41,11 @@ public class PlayerOccluder : MonoBehaviour {
 		Debug.Assert(obj != null);
 		if(obj != null)
 		{
-			obj.GetComponent<Occludee>().SetOccluded(isOccluded);
+			Occludee occludee = obj.GetComponent<Occludee>();
+			if(occludee)
+			{
+				occludee.SetOccluded(isOccluded);
+			}
 		}
 	}
 }
