@@ -162,8 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ba4e3a2ea81584a8fe6f3f77e37369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_strobeTimerMax: .0199999996
+  m_shootForce: 10
   m_emittedLight: {fileID: 128516}
+  m_projectile: {fileID: 103428, guid: 3b7c082de720fa546a5d8a9013f4d080, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -242,6 +243,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_projectile
+      value: 
+      objectReference: {fileID: 103428, guid: 3b7c082de720fa546a5d8a9013f4d080, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_shootForce
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
