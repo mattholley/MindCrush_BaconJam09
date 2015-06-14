@@ -73,38 +73,38 @@ public class AIBrain : MonoBehaviour
 			m_state = newState;
 			m_stateTimer = 0.0f;
 
-			//On State Init
-			switch(m_state)
-			{
-				case State.IDLE:
-				{
-					m_characterBehavior.Jump(0.0f);
-					m_characterBehavior.SetVelocity(Vector2.zero);
-					m_characterBehavior.SetAngularVelocity(0.0f);
-					break;
-				}
-				case State.WANDER_STEERING:
-				case State.WANDER_MOVING:
+		    //On State Init
+		    switch(m_state)
+		    {
+			    case State.IDLE:
+			    {
+				    m_characterBehavior.Jump(0.0f);
+				    m_characterBehavior.SetVelocity(Vector2.zero);
+				    m_characterBehavior.SetAngularVelocity(0.0f);
+				    break;
+			    }
+			    case State.WANDER_STEERING:
+			    case State.WANDER_MOVING:
+			    {
+
+				    break;
+			    }
+			    case State.COMBAT:
+			    {
+
+				    break;
+			    }
+			    case State.DEAD:
+			    {
+
+				    break;
+			    }
+			    case State.PURSUE:
 				{
 
-					break;
-				}
-				case State.COMBAT:
-				{
-
-					break;
-				}
-				case State.DEAD:
-				{
-
-					break;
-				}
-				case State.PURSUE:
-				{
-
-					break;
-				}
-			}
+				    break;
+   			    }
+            }
 		}
 	}
 
@@ -169,15 +169,17 @@ public class AIBrain : MonoBehaviour
 	public void ProcessSensorResult(ref SensorResult result)
 	{
 		if(m_target)
-		{
+        {
 			if(result.enter == false && result.obj == m_target && result.sensor.GetType() == typeof(AwarenessSensor))
 			{
 				m_target = null;
 				SetState(State.IDLE);
+
 			}
 		}
 		else
-		{
+        {
+            Debug.Log("Here I Come");
 			if(result.obj.tag == "Player")
 			{
 				m_target = result.obj;
@@ -185,6 +187,16 @@ public class AIBrain : MonoBehaviour
 			}
 		}
 	}
+
+    public void ProcessKnockBack(GameObject source, GameObject hitObjected)
+    {
+        Vector3 distance = (source.transform.position - hitObjected.transform.position)*-1;
+        m_characterBehavior.SetVelocity(new Vector2(distance.x, distance.z).normalized * 20); 
+        SetState(State.IDLE);
+        m_stateTimer = m_idleTimeMax - 1.0f;
+        m_target = null;
+        if (m_health <= 0.0f) { SetState(State.DEAD); } 
+    }
 	
 	protected CharacterBehavior m_characterBehavior;
 	protected GameObject m_target;
@@ -195,7 +207,7 @@ public class AIBrain : MonoBehaviour
 	//[Matt] May need to move/remove some of this
 	[Header("Character Base Stats")]
 	public bool m_isActive = true;
-	public float health { get { return m_health; } set { m_health = value; if(m_health <= 0.0f) { SetState (State.DEAD); } } }
+	public float health { get { return m_health; } set { m_health = value; } }
 	public string m_sname;
 	public string m_action;
 	public string m_creatureType;

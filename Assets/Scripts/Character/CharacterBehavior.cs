@@ -70,17 +70,20 @@ public class CharacterBehavior : MonoBehaviour
 
 		m_angularVelocity = crossVal * m_rotateSpeed;
 		
-		transform.Rotate(new Vector3(0.0f, m_angularVelocity * Time.deltaTime * 10, 0.0f));
-		m_controller.Move(m_velocity);
-
 		if(!m_controller.isGrounded)
 		{
-			m_velocity.y -= m_gravity * Time.deltaTime;
+            m_velocity.y -= m_gravity * Time.deltaTime;
+            transform.Rotate(new Vector3(0.0f, m_angularVelocity * Time.deltaTime * 10, 0.0f));
+            m_controller.Move(m_velocity);
 		}
 		else
-		{
-			m_velocity.y = 0.0f;
-		}
+        {
+            m_velocity.y = -m_controller.stepOffset / Time.deltaTime;
+            transform.Rotate(new Vector3(0.0f, m_angularVelocity * Time.deltaTime * 10, 0.0f));
+            m_controller.Move(m_velocity);
+            m_velocity.y = 0.0f;
+        }
+
 	}
 
 	public void GainExperience(int amount){
