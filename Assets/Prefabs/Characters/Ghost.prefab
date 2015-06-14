@@ -217,7 +217,8 @@ MonoBehaviour:
   m_wanderMoveTimeMax: 0
   m_stateTimer: 0
   m_dropTable:
-  - {fileID: 11401104, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+  - {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+  m_itemDropped: 0
   m_deathEffect: {fileID: 169064, guid: c1e786b83dd430d4da2dae9b8c045045, type: 2}
 --- !u!114 &11449024
 MonoBehaviour:
@@ -1446,8 +1447,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_dropTable.Array.data[0]
       value: 
-      objectReference: {fileID: 11401104, guid: 27cace28c9dd8e74185a18b35c9333ee,
-        type: 2}
+      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_dropTable.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110422}
