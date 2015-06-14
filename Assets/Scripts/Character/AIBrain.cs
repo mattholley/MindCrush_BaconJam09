@@ -201,8 +201,10 @@ public class AIBrain : MonoBehaviour
 		if ((!m_itemDropped) && (m_dropTable.Length > 0)){
 			m_itemDropped = true;
 			int selectedLoot = Random.Range(0, m_dropTable.Length);
-			GameObject prefab = m_dropTable[selectedLoot];
-			Instantiate (prefab, transform.position,Quaternion.identity);
+			if (m_dropTable[selectedLoot] != null){
+				GameObject prefab = m_dropTable[selectedLoot];
+				Instantiate (prefab, transform.position,Quaternion.identity);
+			}
 		}
 	}
 
