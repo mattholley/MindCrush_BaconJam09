@@ -72,7 +72,7 @@ public class CharacterBehavior : MonoBehaviour
 
 		Debug.Log (m_angularVelocity);
 
-		transform.Rotate(new Vector3(0.0f, m_angularVelocity * Time.deltaTime, 0.0f));
+		transform.Rotate(new Vector3(0.0f, m_angularVelocity * Time.deltaTime * 10, 0.0f));
 		m_controller.Move(m_velocity);
 
 		if(!m_controller.isGrounded)

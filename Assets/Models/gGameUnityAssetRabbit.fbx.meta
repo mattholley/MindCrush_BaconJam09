@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: 2e644c6d081b30b4397176badf49f54f
+timeCreated: 1434247894
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature.002
+    100002: BackFootControlLeft
+    100004: BackFootControlRight
+    100006: BackFootCTRL
+    100008: BackFootCTRL.002
+    100010: BackFootCTRL.002_end
+    100012: BackFootCTRL_end
+    100014: BackFootIKLeft
+    100016: BackFootIKLeft_end
+    100018: BackFootIKRight
+    100020: BackFootIKRight_end
+    100022: BackHeelRowLeft
+    100024: BackHeelRowRight
+    100026: BackToeRollLeft
+    100028: BackToeRollRight
+    100030: Cylinder
+    100032: FootControlL
+    100034: FootControlR
+    100036: FootIKLeft
+    100038: FootIKLeft_end
+    100040: FootIKRight
+    100042: FootIKRight_end
+    100044: FootRollCTRL
+    100046: FootRollCTRL_end
+    100048: FootRollCTRR
+    100050: FootRollCTRR_end
+    100052: //RootNode
+    100054: Head
+    100056: Head_end
+    100058: HeadIK
+    100060: HeadIK_end
+    100062: HeadMaster
+    100064: HeelRowL
+    100066: HeelRowR
+    100068: LFeet
+    100070: LFeet.001
+    100072: LFeet.001_end
+    100074: LFeet_end
+    100076: LowerLeft
+    100078: LowerLeft.001
+    100080: LowerRight
+    100082: LowerRight.001
+    100084: Neck
+    100086: RFeet.003
+    100088: RFeet.003_end
+    100090: RFeet.004
+    100092: RFeet.004_end
+    100094: Root
+    100096: Root.002
+    100098: ShoulderLeft
+    100100: ShoulderLeft.001
+    100102: ShoulderRight
+    100104: ShoulderRight.001
+    100106: Spine1
+    100108: ToeRollL
+    100110: ToeRollR
+    100112: UpperLeft
+    100114: UpperLeft.001
+    100116: UpperRight
+    100118: UpperRight.001
+    400000: Armature.002
+    400002: BackFootControlLeft
+    400004: BackFootControlRight
+    400006: BackFootCTRL
+    400008: BackFootCTRL.002
+    400010: BackFootCTRL.002_end
+    400012: BackFootCTRL_end
+    400014: BackFootIKLeft
+    400016: BackFootIKLeft_end
+    400018: BackFootIKRight
+    400020: BackFootIKRight_end
+    400022: BackHeelRowLeft
+    400024: BackHeelRowRight
+    400026: BackToeRollLeft
+    400028: BackToeRollRight
+    400030: Cylinder
+    400032: FootControlL
+    400034: FootControlR
+    400036: FootIKLeft
+    400038: FootIKLeft_end
+    400040: FootIKRight
+    400042: FootIKRight_end
+    400044: FootRollCTRL
+    400046: FootRollCTRL_end
+    400048: FootRollCTRR
+    400050: FootRollCTRR_end
+    400052: //RootNode
+    400054: Head
+    400056: Head_end
+    400058: HeadIK
+    400060: HeadIK_end
+    400062: HeadMaster
+    400064: HeelRowL
+    400066: HeelRowR
+    400068: LFeet
+    400070: LFeet.001
+    400072: LFeet.001_end
+    400074: LFeet_end
+    400076: LowerLeft
+    400078: LowerLeft.001
+    400080: LowerRight
+    400082: LowerRight.001
+    400084: Neck
+    400086: RFeet.003
+    400088: RFeet.003_end
+    400090: RFeet.004
+    400092: RFeet.004_end
+    400094: Root
+    400096: Root.002
+    400098: ShoulderLeft
+    400100: ShoulderLeft.001
+    400102: ShoulderRight
+    400104: ShoulderRight.001
+    400106: Spine1
+    400108: ToeRollL
+    400110: ToeRollR
+    400112: UpperLeft
+    400114: UpperLeft.001
+    400116: UpperRight
+    400118: UpperRight.001
+    4300000: Cylinder
+    9500000: //RootNode
+    13700000: Cylinder
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
