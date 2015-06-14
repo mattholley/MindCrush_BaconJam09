@@ -143,7 +143,7 @@ public class AIBrain : MonoBehaviour
 			return;
 		}
 
-		m_characterBehavior.Jump(1.0f);
+		//m_characterBehavior.Jump(1.0f);
 		m_characterBehavior.SetVelocity(new Vector2(distance.x, distance.z).normalized);
 	}
 	
@@ -179,7 +179,6 @@ public class AIBrain : MonoBehaviour
 		}
 		else
         {
-            Debug.Log("Here I Come");
 			if(result.obj.tag == "Player")
 			{
 				m_target = result.obj;

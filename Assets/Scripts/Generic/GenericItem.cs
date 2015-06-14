@@ -20,7 +20,6 @@ public class GenericItem : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter(Collider other){
-		Debug.Log ("Touched by:"+other.gameObject.name);
 		OnTouched (other.gameObject);
 	}
 
