@@ -32,7 +32,8 @@ public class HumanBehavior : CharacterBehavior {
         {
             base.Update();
             m_hand.transform.LookAt(m_aimTarget);
-            m_Animator.SetFloat("velocity", m_velocity.magnitude);
+
+            m_Animator.SetFloat("velocity", new Vector2(m_velocity.x, m_velocity.z).magnitude);
             m_speedMagnitude = m_velocity.magnitude;
 
             if (HitTime > HitTimer)
