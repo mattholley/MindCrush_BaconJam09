@@ -9,7 +9,7 @@ public class FlashLight : WeaponItem
 	{
 		m_light = GetComponentInChildren<Light>();
 		m_lightCollider = GetComponentInChildren<Collider>();
-		m_lightCollider.enabled = false;
+		//m_lightCollider.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -36,7 +36,7 @@ public class FlashLight : WeaponItem
 	{
 		base.Enable();
 		m_light.color = Color.magenta;
-		m_lightCollider.enabled = true;
+		//m_lightCollider.enabled = true;
 	}
 
 	protected override void Disable()
@@ -44,16 +44,31 @@ public class FlashLight : WeaponItem
 		base.Disable();
 		m_light.enabled = true;
         m_light.color = Color.white;
-		m_lightCollider.enabled = false;
+		//m_lightCollider.enabled = false;
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
 		if(other.gameObject.tag == "Monster")
 		{
-			AIBrain brain = other.gameObject.GetComponent<AIBrain>();
-			brain.health -= 1.0f;
-            brain.ProcessKnockBack(gameObject, other.gameObject);
+			if(itemEnabled)
+			{
+				AIBrain brain = other.gameObject.GetComponent<AIBrain>();
+				brain.health -= 1.0f;
+	            brain.ProcessKnockBack(gameObject, other.gameObject);
+			}
+
+			CharacterBehavior character = other.gameObject.GetComponent<CharacterBehavior>();
+			character.m_moveSpeedModifier = 0.25f;
+		}
+	}
+
+	void OnTriggerExit(Collider other)
+	{
+		if(other.gameObject.tag == "Monster")
+		{
+			CharacterBehavior character = other.gameObject.GetComponent<CharacterBehavior>();
+			character.m_moveSpeedModifier = 1.0f;
 		}
 	}
 
