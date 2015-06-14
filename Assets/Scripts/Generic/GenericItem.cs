@@ -29,10 +29,12 @@ public class GenericItem : MonoBehaviour {
 	public virtual void OnUsed(GameObject entity) {}
 
 	protected virtual void OnTouched(GameObject entity) {
-		Collect ();
+		Collect (entity);
 	}
 
-	protected virtual void Collect() {}
+	protected virtual void Collect(GameObject entity) {}
+
+	public virtual void OnApply(GameObject entity) {}
 
 	protected virtual void SetAttributes() {}
 
