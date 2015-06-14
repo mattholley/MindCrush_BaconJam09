@@ -7,16 +7,11 @@ public class HumanBehavior : CharacterBehavior {
 	protected override void Start () {
 		base.Start();
         m_Animator = GetComponent<Animator>();
-		Transform hand = transform.FindChild("Hand");
-		if(hand)
-		{
-			m_hand = hand.gameObject;
-		}
 
 		GameObject inventoryItemObject = GameObject.Instantiate(m_tempInventoryItemPrefab);
 		if(inventoryItemObject)
 		{
-			inventoryItemObject.transform.SetParent(hand, false);
+			inventoryItemObject.transform.SetParent(m_hand.transform, false);
 			
 			InventoryItem inventoryItem = inventoryItemObject.GetComponent<InventoryItem>();
 			Debug.Assert(inventoryItem);
@@ -34,11 +29,11 @@ public class HumanBehavior : CharacterBehavior {
 	// Update is called once per frame
 	protected override void Update () {
 		base.Update();
-        Debug.Log(m_hand);
         m_hand.transform.LookAt(m_aimTarget);
         m_Animator.SetFloat("velocity", m_velocity.magnitude);
 	}
-
-	private GameObject m_hand;
+	
     private Animator m_Animator;
+
+	public GameObject m_hand;
 }

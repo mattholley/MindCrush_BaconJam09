@@ -69,9 +69,7 @@ public class CharacterBehavior : MonoBehaviour
 		float dotVal = Vector3.Dot(transform.forward, distance.normalized);
 
 		m_angularVelocity = crossVal * m_rotateSpeed;
-
-		Debug.Log (m_angularVelocity);
-
+		
 		transform.Rotate(new Vector3(0.0f, m_angularVelocity * Time.deltaTime * 10, 0.0f));
 		m_controller.Move(m_velocity);
 
