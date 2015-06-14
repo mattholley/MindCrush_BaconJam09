@@ -21,6 +21,8 @@ public class AIBrain : MonoBehaviour
 
 		m_isActive = true;
 		m_action = "Spawned";
+
+        m_health = m_characterBehavior.m_health[m_characterBehavior.m_level];
 	}
 	
 	// Update is called once per frame
