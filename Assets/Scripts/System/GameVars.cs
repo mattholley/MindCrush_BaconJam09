@@ -9,6 +9,9 @@ public class GameVars : MonoBehaviour {
 	public float monsterRate;
 	public float lightRate;
 
+	public delegate void GameLevelUpAction();
+	public static event GameLevelUpAction OnGameLevelUp;
+
 	static float treeLevel;
 	static float monsterLevel;
 	static float lightLevel;
@@ -31,6 +34,8 @@ public class GameVars : MonoBehaviour {
 		treeLevel = GameLevel * treeRate;
 		monsterLevel = GameLevel * monsterRate;
 		lightLevel = GameLevel * lightRate;
+
+		OnGameLevelUp();
 
 	}
 
