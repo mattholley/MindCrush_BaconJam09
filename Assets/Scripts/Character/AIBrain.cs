@@ -185,7 +185,13 @@ public class AIBrain : MonoBehaviour
 			}
 		}
 	}
-	
+
+	protected virtual void GenerateLoot() {
+		int selectedLoot = Random.Range(0, m_dropTable.Length);
+		GameObject newPrefab = (GameObject)Instantiate(m_dropTable[selectedLoot], gameObject.transform.position, Quaternion.identity);
+		newPrefab.transform.parent = transform;
+	}
+
 	protected CharacterBehavior m_characterBehavior;
 	protected GameObject m_target;
 	private GameObject m_sensors;
@@ -209,4 +215,6 @@ public class AIBrain : MonoBehaviour
 	public float m_wanderSteerTimeMax = 1.0f;
 	public float m_wanderMoveTimeMax;
 	public float m_stateTimer = 0.0f;
+
+	public GenericItem[] m_dropTable;
 }
