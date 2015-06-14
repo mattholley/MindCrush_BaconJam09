@@ -179,7 +179,6 @@ public class AIBrain : MonoBehaviour
 		}
 		else
         {
-            Debug.Log("Here I Come");
 			if(result.obj.tag == "Player")
 			{
 				m_target = result.obj;

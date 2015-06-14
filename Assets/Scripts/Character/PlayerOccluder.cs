@@ -28,17 +28,24 @@ public class PlayerOccluder : MonoBehaviour {
 		//Attempt to make the potential set visible with raycasts
 		foreach(GameObject obj in nextPotentialSet)
 		{
-			RaycastHit hitInfo;
-			Vector3 otherAtEyeLevel = obj.transform.position;
-			otherAtEyeLevel.y = transform.position.y;
-
-			Debug.DrawLine(transform.position, otherAtEyeLevel, Color.blue);
-			if(Physics.Raycast(transform.position, (otherAtEyeLevel - transform.position).normalized, out hitInfo))
+			if(obj == null)
 			{
-				if(hitInfo.collider.gameObject == obj)
+				m_potentiallyVisible.Remove(obj);
+			}
+			else
+			{
+				RaycastHit hitInfo;
+				Vector3 otherAtEyeLevel = obj.transform.position;
+				otherAtEyeLevel.y = transform.position.y;
+
+				Debug.DrawLine(transform.position, otherAtEyeLevel, Color.blue);
+				if(Physics.Raycast(transform.position, (otherAtEyeLevel - transform.position).normalized, out hitInfo))
 				{
-					SetObjectOcclusion(obj, false);
-					m_potentiallyVisible.Remove(obj);
+					if(hitInfo.collider.gameObject == obj)
+					{
+						SetObjectOcclusion(obj, false);
+						m_potentiallyVisible.Remove(obj);
+					}
 				}
 			}
 		}
@@ -48,19 +55,26 @@ public class PlayerOccluder : MonoBehaviour {
 		//Attempt to make the visible objects occluded with raycasts	
 		foreach(GameObject obj in nextVisibleSet)
 		{
-			RaycastHit hitInfo;
-			Vector3 otherAtEyeLevel = obj.transform.position;
-			otherAtEyeLevel.y = transform.position.y;
-			if(Physics.Raycast(transform.position, (otherAtEyeLevel - transform.position).normalized, out hitInfo))
+			if(obj == null)
 			{
-				if(hitInfo.collider.gameObject != obj)
-				{
-					SetObjectOcclusion(obj, true);
-					m_potentiallyVisible.Add(obj);
-				}
+				m_visibleObjects.Remove(obj);
 			}
+			else
+			{
+				RaycastHit hitInfo;
+				Vector3 otherAtEyeLevel = obj.transform.position;
+				otherAtEyeLevel.y = transform.position.y;
+				if(Physics.Raycast(transform.position, (otherAtEyeLevel - transform.position).normalized, out hitInfo))
+				{
+					if(hitInfo.collider.gameObject != obj)
+					{
+						SetObjectOcclusion(obj, true);
+						m_potentiallyVisible.Add(obj);
+					}
+				}
 
-			Debug.DrawLine(transform.position, otherAtEyeLevel, Color.red);
+				Debug.DrawLine(transform.position, otherAtEyeLevel, Color.red);
+			}
 		}
 	}
 
@@ -70,12 +84,7 @@ public class PlayerOccluder : MonoBehaviour {
 		if(obj != null)
 		{
 			Debug.Log (obj.name + " is " + isOccluded);
-
-			Renderer renderer = obj.GetComponent<Renderer>();
-			//renderer.enabled = !isOccluded;
-			Color oldColor = renderer.material.color;
-			oldColor.a = isOccluded ? 0.1f : 1.0f;
-			renderer.material.color = oldColor;
+			obj.GetComponent<Occludee>().SetOccluded(isOccluded);
 
 			if(isOccluded)
 			{
@@ -90,6 +99,7 @@ public class PlayerOccluder : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
+		Debug.Log(other.gameObject.name);
 		if(other.tag == "PlayerOcclude")
 		{
 			m_potentiallyVisible.Add(other.gameObject);
