@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TestItem : GenericItem {
 
+	public int m_experience;
+
 	protected override void SetAttributes(){
 		base.SetAttributes();
 		m_attributes.Add("NAME","Test Item");
@@ -14,11 +16,17 @@ public class TestItem : GenericItem {
 		base.OnTouched(entity);
 	}
 
-	protected override void Collect(){
-		Debug.Log ("Test override collect.");
-		Debug.Log ("Insert code to do stuff here, such as add to inventory or something.");
-		Debug.Log ("You picked up a '"+m_attributes["NAME"]+"'!");
-		Destroy (this.gameObject);
+	protected override void Collect(GameObject entity){
+		base.Collect(entity);
+		if (entity.name == "Player"){
+			OnApply(entity);
+			Destroy (this.gameObject);
+		}
+	}
+
+	public override void OnApply(GameObject entity){
+		base.OnApply(entity);
+		entity.GetComponent<HumanBehavior>().GainExperience(m_experience);
 	}
 
 	protected override void OnDestroy(){
