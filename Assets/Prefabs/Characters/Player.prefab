@@ -640,15 +640,26 @@ MonoBehaviour:
   m_jumpForce: 1
   m_friction: .300000012
   m_gravity: 9.81000042
-  m_knockbackPower: []
+  m_knockbackPower:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_bonusMoveSpeed:
   - 0
   - 5
+  - 10
+  - 15
   - 50
-  - 50
-  - 50
-  m_weaponPower: []
-  m_health: 
+  m_weaponPower:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  m_maxHealth: 64000000c80000002c01000090010000f4010000
+  m_currentHealth: 50
   m_level: 0
   m_experience: 0
   m_expToLevel: 64000000c8000000900100002003000040060000
@@ -734,7 +745,51 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_maxHealth.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_weaponPower.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_knockbackPower.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxHealth.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxHealth.Array.data[1]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxHealth.Array.data[2]
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxHealth.Array.data[3]
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxHealth.Array.data[4]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_currentHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_bonusMoveSpeed.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_bonusMoveSpeed.Array.data[3]
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 143942}

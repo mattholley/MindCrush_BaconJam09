@@ -217,6 +217,17 @@ MonoBehaviour:
   m_wanderMoveTimeMax: 0
   m_stateTimer: 0
   m_dropTable:
+  - {fileID: 187344, guid: 0e76639db92b1a34b9298430a1ab95e4, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_guaranteedDrops:
   - {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
   m_itemDropped: 0
   m_deathEffect: {fileID: 169064, guid: c1e786b83dd430d4da2dae9b8c045045, type: 2}
@@ -274,8 +285,9 @@ MonoBehaviour:
   m_knockbackPower: []
   m_bonusMoveSpeed: []
   m_weaponPower: []
-  m_health: 
-  m_level: 1
+  m_maxHealth: 64000000
+  m_currentHealth: 0
+  m_level: 0
   m_experience: 0
   m_expToLevel: 
 --- !u!114 &11497692
@@ -1418,6 +1430,14 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_dropTable.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxHealth.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_guaranteedDrops.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -1447,10 +1467,54 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_dropTable.Array.data[0]
       value: 
-      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+      objectReference: {fileID: 187344, guid: 0e76639db92b1a34b9298430a1ab95e4, type: 2}
     - target: {fileID: 0}
       propertyPath: m_dropTable.Array.data[1]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_guaranteedDrops.Array.data[0]
+      value: 
+      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_dropTable.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_dropTable.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_dropTable.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_dropTable.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_dropTable.Array.data[6]
+      value: 
+      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_dropTable.Array.data[7]
+      value: 
+      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_dropTable.Array.data[8]
+      value: 
+      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_dropTable.Array.data[9]
+      value: 
+      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_level
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_maxHealth.Array.data[0]
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

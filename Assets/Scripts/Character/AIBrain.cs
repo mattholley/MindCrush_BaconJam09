@@ -200,8 +200,16 @@ public class AIBrain : MonoBehaviour
     }
 
 	protected virtual void GenerateLoot() {
-		if ((!m_itemDropped) && (m_dropTable.Length > 0)){
+		if (!m_itemDropped){
 			m_itemDropped = true;
+			// 100% Drop Table
+			for (int i = 0; i < m_guaranteedDrops.Length; i++){
+				if (m_guaranteedDrops[i] != null){
+					GameObject prefab = m_guaranteedDrops[i];
+					Instantiate (prefab, transform.position, Quaternion.identity);
+				}
+			}
+			// Standard Drop Table
 			int selectedLoot = Random.Range(0, m_dropTable.Length);
 			if (m_dropTable[selectedLoot] != null){
 				GameObject prefab = m_dropTable[selectedLoot];
@@ -235,5 +243,6 @@ public class AIBrain : MonoBehaviour
 	public float m_wanderMoveTimeMax;
 	public float m_stateTimer = 0.0f;
 	public GameObject[] m_dropTable;
+	public GameObject[] m_guaranteedDrops;
 	public bool m_itemDropped = false;
 }
