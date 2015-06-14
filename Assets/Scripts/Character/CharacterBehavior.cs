@@ -86,6 +86,8 @@ public class CharacterBehavior : MonoBehaviour
 		}
 	}
 
+	public virtual void GainHealth(int amount){}
+
 	protected CharacterController m_controller;
 	protected InventoryItem m_equippedItem;
 	protected Vector3 m_velocity;
@@ -103,7 +105,8 @@ public class CharacterBehavior : MonoBehaviour
 	public float[] m_knockbackPower;
 	public float[] m_bonusMoveSpeed;
 	public float[] m_weaponPower;
-	public int[] m_health;
+	public int[] m_maxHealth;
+	public int m_currentHealth;
 
 	// Player Statistics
 	public int m_level = 0;
