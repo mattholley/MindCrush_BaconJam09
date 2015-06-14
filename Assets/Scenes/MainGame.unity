@@ -116,7 +116,7 @@ Transform:
   - {fileID: 2020916941}
   - {fileID: 356907587}
   - {fileID: 311747248}
-  m_Father: {fileID: 426884391}
+  m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!1 &119756934
 GameObject:
@@ -435,7 +435,6 @@ Transform:
   - {fileID: 1991095772}
   - {fileID: 2063754423}
   - {fileID: 2001288013}
-  - {fileID: 77585352}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!1 &1049172957
