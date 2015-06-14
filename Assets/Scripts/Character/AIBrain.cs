@@ -21,6 +21,8 @@ public class AIBrain : MonoBehaviour
 
 		m_isActive = true;
 		m_action = "Spawned";
+
+        m_health = m_characterBehavior.m_health[m_characterBehavior.m_level];
 	}
 	
 	// Update is called once per frame
@@ -219,5 +221,5 @@ public class AIBrain : MonoBehaviour
 	public float m_idleTimeMax = 5.0f;
 	public float m_wanderSteerTimeMax = 1.0f;
 	public float m_wanderMoveTimeMax;
-	public float m_stateTimer = 0.0f;
+    public float m_stateTimer = 0.0f;
 }

@@ -28,10 +28,24 @@ public class HumanBehavior : CharacterBehavior {
 	
 	// Update is called once per frame
 	protected override void Update () {
-		base.Update();
-        m_hand.transform.LookAt(m_aimTarget);
-        m_Animator.SetFloat("velocity", m_velocity.magnitude);
-        m_speedMagnitude = m_velocity.magnitude;
+        if (!isDead)
+        {
+            base.Update();
+            m_hand.transform.LookAt(m_aimTarget);
+            m_Animator.SetFloat("velocity", m_velocity.magnitude);
+            m_speedMagnitude = m_velocity.magnitude;
+
+            if (HitTime > HitTimer)
+            {
+                isHit = false;
+                gameObject.transform.FindChild("Group33741").GetComponent<Renderer>().material.color = Color.white;
+            }
+            else
+            {
+                HitTime += Time.deltaTime;
+                gameObject.transform.FindChild("Group33741").GetComponent<Renderer>().material.color = Color.red;
+            }
+        }
 	}
 
 	
@@ -39,4 +53,9 @@ public class HumanBehavior : CharacterBehavior {
 	public GameObject m_hand;
 
     public float m_speedMagnitude;
+
+    public float HitTimer = 0.0f;
+    public float HitTime = 0.0f;
+    public bool isHit = false;
+    public bool isDead = false;
 }

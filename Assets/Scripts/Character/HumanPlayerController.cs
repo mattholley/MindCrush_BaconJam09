@@ -13,31 +13,34 @@ public class HumanPlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		//Aim
-		RaycastHit hitInfo;
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		if(Physics.Raycast(ray, out hitInfo))
-		{
-			m_playerBehavior.m_aimTarget = hitInfo.point;
-		}
+        if (!m_playerBehavior.isDead)
+        {
+            //Aim
+            RaycastHit hitInfo;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hitInfo))
+            {
+                m_playerBehavior.m_aimTarget = hitInfo.point;
+            }
 
-		//Item
-		m_playerBehavior.SetIsItemEnabled(Input.GetButton("Fire1"));
+            //Item
+            m_playerBehavior.SetIsItemEnabled(Input.GetButton("Fire1"));
 
-		if (Input.GetButtonUp("Fire1"))
-			ScreenText.FloatText("Pew!!!", this.gameObject);
+            if (Input.GetButtonUp("Fire1"))
+                ScreenText.FloatText("Pew!!!", this.gameObject);
 
-		//Movement
-		Vector2 direction = Vector2.zero;
-		direction.x += Input.GetAxis("Horizontal");
-		direction.y += Input.GetAxis("Vertical");
+            //Movement
+            Vector2 direction = Vector2.zero;
+            direction.x += Input.GetAxis("Horizontal");
+            direction.y += Input.GetAxis("Vertical");
 
-		if(m_controller.isGrounded)
-		{
-			m_playerBehavior.Jump(Input.GetAxis("Jump"));
-		}
+            if (m_controller.isGrounded)
+            {
+                m_playerBehavior.Jump(Input.GetAxis("Jump"));
+            }
 
-		m_playerBehavior.SetVelocity(direction);
+            m_playerBehavior.SetVelocity(direction);
+        }
 	}
 
 	private HumanBehavior m_playerBehavior;

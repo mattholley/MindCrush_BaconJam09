@@ -651,8 +651,11 @@ MonoBehaviour:
   m_level: 0
   m_experience: 0
   m_expToLevel: 64000000c8000000900100002003000040060000
-  m_hand: {fileID: 0}
+  m_hand: {fileID: 105938}
   m_speedMagnitude: 0
+  HitTimer: 0
+  HitTime: 0
+  isHit: 0
 --- !u!137 &13762022
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
