@@ -153,7 +153,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110422}
-  m_Mesh: {fileID: 4300000, guid: 8c1cc31a41be68a459e17e263d1dc5ba, type: 3}
+  m_Mesh: {fileID: 4300000, guid: a8b605fa964910e468960925229ba79a, type: 3}
 --- !u!64 &6494124
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -320,6 +320,10 @@ Prefab:
       propertyPath: m_deathEffect
       value: 
       objectReference: {fileID: 169064, guid: c1e786b83dd430d4da2dae9b8c045045, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: a8b605fa964910e468960925229ba79a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110422}
