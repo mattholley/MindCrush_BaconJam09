@@ -31,12 +31,9 @@ public class HumanBehavior : CharacterBehavior {
 		base.Update();
         m_hand.transform.LookAt(m_aimTarget);
         m_Animator.SetFloat("velocity", m_velocity.magnitude);
-        m_speedMagnitude = m_velocity.magnitude;
 	}
 
 	
     private Animator m_Animator;
 	public GameObject m_hand;
-
-    public float m_speedMagnitude;
 }
