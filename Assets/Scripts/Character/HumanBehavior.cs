@@ -30,7 +30,9 @@ public class HumanBehavior : CharacterBehavior {
 	protected override void Update () {
 		base.Update();
         m_hand.transform.LookAt(m_aimTarget);
-        m_Animator.SetFloat("velocity", m_velocity.magnitude);
+
+		Vector2 animVelocity = new Vector2(m_velocity.x, m_velocity.z);
+		m_Animator.SetFloat("velocity", animVelocity.magnitude);
 	}
 
 	
