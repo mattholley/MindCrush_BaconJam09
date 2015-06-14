@@ -1,15 +1,57 @@
 fileFormatVersion: 2
-guid: 97e5587da26b62a439dc31920863adb7
-timeCreated: 1434251254
+guid: e6729af676559f24a8db481793b5df2c
+timeCreated: 1434253645
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: Arm.L
+    100002: Arm.R
+    100004: Bone
+    100006: Chest
+    100008: Group33741
+    100010: Hand.L
+    100012: Hand.L_end
+    100014: Hand.R
+    100016: Hand.R_end
+    100018: Head
+    100020: Head_end
+    100022: Hip
+    100024: LegL
+    100026: LegL_end
+    100028: LegR
+    100030: LegR_end
+    100032: LowerBody
+    100034: Neck
+    100036: //RootNode
+    100038: TestModel
+    400000: Arm.L
+    400002: Arm.R
+    400004: Bone
+    400006: Chest
+    400008: Group33741
+    400010: Hand.L
+    400012: Hand.L_end
+    400014: Hand.R
+    400016: Hand.R_end
+    400018: Head
+    400020: Head_end
+    400022: Hip
+    400024: LegL
+    400026: LegL_end
+    400028: LegR
+    400030: LegR_end
+    400032: LowerBody
+    400034: Neck
+    400036: //RootNode
+    400038: TestModel
     4300000: Group33741
+    7400000: Idle
+    7400002: Running
+    7400004: Dying
+    7400006: Death
+    9500000: //RootNode
+    13700000: Group33741
   materials:
     importMaterials: 1
     materialName: 0
@@ -29,7 +71,271 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: TestModel|TestModelAction
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Group33741
+        weight: 1
+      - path: TestModel
+        weight: 1
+      - path: TestModel/Bone
+        weight: 1
+      - path: TestModel/Bone/LegL
+        weight: 1
+      - path: TestModel/Bone/LegL/LegL_end
+        weight: 1
+      - path: TestModel/Bone/LegR
+        weight: 1
+      - path: TestModel/Bone/LegR/LegR_end
+        weight: 1
+      - path: TestModel/Bone/LowerBody
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.L
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.L/Hand.L
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.L/Hand.L/Hand.L_end
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.R
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.R/Hand.R
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.R/Hand.R/Hand.R_end
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Head
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Head/Head_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Running
+      takeName: TestModel|TestModelAction
+      firstFrame: 64
+      lastFrame: 96
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Group33741
+        weight: 1
+      - path: TestModel
+        weight: 1
+      - path: TestModel/Bone
+        weight: 1
+      - path: TestModel/Bone/LegL
+        weight: 1
+      - path: TestModel/Bone/LegL/LegL_end
+        weight: 1
+      - path: TestModel/Bone/LegR
+        weight: 1
+      - path: TestModel/Bone/LegR/LegR_end
+        weight: 1
+      - path: TestModel/Bone/LowerBody
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.L
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.L/Hand.L
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.L/Hand.L/Hand.L_end
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.R
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.R/Hand.R
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.R/Hand.R/Hand.R_end
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Head
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Head/Head_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Dying
+      takeName: TestModel|TestModelAction
+      firstFrame: 128
+      lastFrame: 159
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Group33741
+        weight: 1
+      - path: TestModel
+        weight: 1
+      - path: TestModel/Bone
+        weight: 1
+      - path: TestModel/Bone/LegL
+        weight: 1
+      - path: TestModel/Bone/LegL/LegL_end
+        weight: 1
+      - path: TestModel/Bone/LegR
+        weight: 1
+      - path: TestModel/Bone/LegR/LegR_end
+        weight: 1
+      - path: TestModel/Bone/LowerBody
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.L
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.L/Hand.L
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.L/Hand.L/Hand.L_end
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.R
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.R/Hand.R
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.R/Hand.R/Hand.R_end
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Head
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Head/Head_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Death
+      takeName: TestModel|TestModelAction
+      firstFrame: 159
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Group33741
+        weight: 1
+      - path: TestModel
+        weight: 1
+      - path: TestModel/Bone
+        weight: 1
+      - path: TestModel/Bone/LegL
+        weight: 1
+      - path: TestModel/Bone/LegL/LegL_end
+        weight: 1
+      - path: TestModel/Bone/LegR
+        weight: 1
+      - path: TestModel/Bone/LegR/LegR_end
+        weight: 1
+      - path: TestModel/Bone/LowerBody
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.L
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.L/Hand.L
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.L/Hand.L/Hand.L_end
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.R
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.R/Hand.R
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Arm.R/Hand.R/Hand.R_end
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Head
+        weight: 1
+      - path: TestModel/Bone/LowerBody/Hip/Chest/Neck/Head/Head_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -67,7 +373,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 
   assetBundleName: 
