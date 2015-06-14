@@ -30,8 +30,8 @@ public class CharacterBehavior : MonoBehaviour
 
 	public virtual void SetVelocity(Vector2 velocity)
 	{
-		m_velocity.x = velocity.x * m_moveSpeed;
-		m_velocity.z = velocity.y * m_moveSpeed;
+		m_velocity.x = velocity.x * m_moveSpeed * m_moveSpeedModifier;
+		m_velocity.z = velocity.y * m_moveSpeed * m_moveSpeedModifier;
 	}
 
 	public void Jump(float force)
@@ -90,6 +90,8 @@ public class CharacterBehavior : MonoBehaviour
 	protected InventoryItem m_equippedItem;
 	protected Vector3 m_velocity;
 	protected float m_angularVelocity;
+
+	public float m_moveSpeedModifier = 1.0f;
 
 	public GameObject m_tempInventoryItemPrefab;
 	public Vector3 m_aimTarget;
