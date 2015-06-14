@@ -17,6 +17,7 @@ public class AIBrain : MonoBehaviour
 	// Use this for initialization
 	protected virtual void Start () 
 	{
+        m_DetectPlayer = GameObject.Find("Player");
 		m_characterBehavior = GetComponent<CharacterBehavior>();
 
 		m_isActive = true;
@@ -124,6 +125,14 @@ public class AIBrain : MonoBehaviour
 	{
 		if(m_state == State.WANDER_STEERING)
 		{
+            Vector3 direction = transform.forward;
+            transform.rotation = Quaternion.LookRotation(direction);
+            m_characterBehavior.SetVelocity(new Vector2(direction.x, direction.z));
+            if(Vector3.Distance(m_DetectPlayer.transform.position,gameObject.transform.position)<=4.0f)
+            {
+                m_target = m_DetectPlayer;
+                SetState(State.PURSUE);
+            }
 
 		}
 		else
@@ -235,5 +244,6 @@ public class AIBrain : MonoBehaviour
 	public float m_wanderMoveTimeMax;
 	public float m_stateTimer = 0.0f;
 	public GameObject[] m_dropTable;
-	public bool m_itemDropped = false;
+    public bool m_itemDropped = false;
+    public GameObject m_DetectPlayer;
 }

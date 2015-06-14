@@ -29,6 +29,8 @@ public class AttackCollider : MonoBehaviour {
                 }
                 else
                 {
+                    if(!brain.isDead)
+                        brain.HitTime = 0.0f;
                     Animator m_Animator = brain.GetComponentInChildren<Animator>();
                     m_Animator.SetBool("IsDead", true);
                     brain.isDead = true;
