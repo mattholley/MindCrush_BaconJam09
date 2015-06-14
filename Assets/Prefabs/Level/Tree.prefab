@@ -29,7 +29,7 @@ GameObject:
   - 23: {fileID: 2326184}
   - 65: {fileID: 6577494}
   - 54: {fileID: 5427898}
-  - 114: {fileID: 11421402}
+  - 114: {fileID: 11447912}
   m_Layer: 0
   m_Name: Tree
   m_TagString: PlayerOcclude
@@ -151,7 +151,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 25, z: 2}
   m_Center: {x: -.121500731, y: 12.4799995, z: -.783415854}
---- !u!114 &11421402
+--- !u!114 &11447912
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
