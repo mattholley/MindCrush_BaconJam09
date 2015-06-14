@@ -8,6 +8,8 @@ public class GameVars : MonoBehaviour {
 	public float treeRate;
 	public float monsterRate;
 
+	public Light lightSource;
+
 	static float treeLevel;
 	static float monsterLevel;
 

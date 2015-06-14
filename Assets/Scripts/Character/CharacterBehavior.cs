@@ -85,6 +85,13 @@ public class CharacterBehavior : MonoBehaviour
 		}
 	}
 
+	public void GainExperience(int amount){
+		m_experience += amount;
+		while (m_experience > m_expToLevel[m_level]){
+			m_level++;
+		}
+	}
+
 	protected CharacterController m_controller;
 	protected InventoryItem m_equippedItem;
 	protected Vector3 m_velocity;
@@ -97,4 +104,10 @@ public class CharacterBehavior : MonoBehaviour
 	public float m_jumpForce = 1.0f;
 	public float m_friction = 0.3f;
 	public float m_gravity = 9.81f;
+
+	// Player Statistics
+	public int m_level = 1;
+	public int m_experience = 0;
+	public int[] m_expToLevel;
+
 }
