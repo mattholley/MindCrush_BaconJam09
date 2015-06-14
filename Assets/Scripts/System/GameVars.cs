@@ -3,15 +3,15 @@ using System.Collections;
 
 public class GameVars : MonoBehaviour {
 
-	public static int GameLevel;
+	public static int GameLevel = 1;
 
 	public float treeRate;
 	public float monsterRate;
-
-	public Light lightSource;
+	public float lightRate;
 
 	static float treeLevel;
 	static float monsterLevel;
+	static float lightLevel;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +30,7 @@ public class GameVars : MonoBehaviour {
 
 		treeLevel = GameLevel * treeRate;
 		monsterLevel = GameLevel * monsterRate;
+		lightLevel = GameLevel * lightRate;
 
 	}
 
@@ -45,6 +46,10 @@ public class GameVars : MonoBehaviour {
 	public static float GetTreeLevel() {
 		
 		return treeLevel;
+	}
+
+	public static float GetLightLevel() {
+		return lightLevel;
 	}
 
 }
