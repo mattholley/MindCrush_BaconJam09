@@ -14,17 +14,53 @@ public class PlayerOccluder : MonoBehaviour {
 	void Update () 
 	{
 		HashSet<GameObject> occludedObjects = new HashSet<GameObject>(GameObject.FindGameObjectsWithTag("PlayerOcclude"));
-		occludedObjects.ExceptWith(m_visibleObjects);
+		//occludedObjects.ExceptWith(m_visibleObjects);
+		//occludedObjects.ExceptWith(m_potentiallyVisible);
 
 		foreach(GameObject obj in occludedObjects)
 		{
-			//SetObjectOcclusion(obj, false);
+			//SetObjectOcclusion(obj, true);
 		}
 
-		foreach(GameObject obj in m_visibleObjects)
+		//[Matt] Can't remove while in the foreach, and no way around it seems
+		HashSet<GameObject> nextPotentialSet = new HashSet<GameObject>(m_potentiallyVisible);
+
+		//Attempt to make the potential set visible with raycasts
+		foreach(GameObject obj in nextPotentialSet)
 		{
-			//SetObjectOcclusion(obj, false);
-			Debug.DrawLine(transform.position, obj.transform.position, Color.red);
+			RaycastHit hitInfo;
+			Vector3 otherAtEyeLevel = obj.transform.position;
+			otherAtEyeLevel.y = transform.position.y;
+
+			Debug.DrawLine(transform.position, otherAtEyeLevel, Color.blue);
+			if(Physics.Raycast(transform.position, (otherAtEyeLevel - transform.position).normalized, out hitInfo))
+			{
+				if(hitInfo.collider.gameObject == obj)
+				{
+					SetObjectOcclusion(obj, false);
+					m_potentiallyVisible.Remove(obj);
+				}
+			}
+		}
+
+		HashSet<GameObject> nextVisibleSet = new HashSet<GameObject>(m_visibleObjects);
+
+		//Attempt to make the visible objects occluded with raycasts	
+		foreach(GameObject obj in nextVisibleSet)
+		{
+			RaycastHit hitInfo;
+			Vector3 otherAtEyeLevel = obj.transform.position;
+			otherAtEyeLevel.y = transform.position.y;
+			if(Physics.Raycast(transform.position, (otherAtEyeLevel - transform.position).normalized, out hitInfo))
+			{
+				if(hitInfo.collider.gameObject != obj)
+				{
+					SetObjectOcclusion(obj, true);
+					m_potentiallyVisible.Add(obj);
+				}
+			}
+
+			Debug.DrawLine(transform.position, otherAtEyeLevel, Color.red);
 		}
 	}
 
@@ -56,21 +92,7 @@ public class PlayerOccluder : MonoBehaviour {
 	{
 		if(other.tag == "PlayerOcclude")
 		{
-			RaycastHit hitInfo;
-			if(Physics.Raycast(transform.position, (other.transform.position - transform.position).normalized, out hitInfo))
-			{
-				if(hitInfo.collider == other)
-				{
-					if(!m_visibleObjects.Contains(other.gameObject))
-					{
-						SetObjectOcclusion(other.gameObject, false);
-					}
-				}
-				else
-				{
-					SetObjectOcclusion(other.gameObject, true);
-				}
-			}
+			m_potentiallyVisible.Add(other.gameObject);
 		}
 	}
 
@@ -78,9 +100,11 @@ public class PlayerOccluder : MonoBehaviour {
 	{
 		if(other.tag == "PlayerOcclude")
 		{
+			m_potentiallyVisible.Remove(other.gameObject);
 			SetObjectOcclusion(other.gameObject, true);
 		}
 	}
 
+	private HashSet<GameObject> m_potentiallyVisible = new HashSet<GameObject>();
 	private HashSet<GameObject> m_visibleObjects = new HashSet<GameObject>();
 }
