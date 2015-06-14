@@ -146,9 +146,11 @@ GameObject:
   - 4: {fileID: 464616}
   - 95: {fileID: 9529584}
   - 143: {fileID: 14315752}
+  - 114: {fileID: 11475566}
+  - 114: {fileID: 11421648}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -507,7 +509,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -.0500000007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 481330}
@@ -607,6 +609,48 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11421648
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff7881137fc76343bae45cc05604cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11475566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf943a86770e0f46a937fb5f808717e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tempInventoryItemPrefab: {fileID: 137048, guid: b5f52ff9ec238f84ea8f98d1aff20107,
+    type: 2}
+  m_aimTarget: {x: 0, y: 0, z: 0}
+  m_moveSpeed: 30
+  m_rotateSpeed: 30
+  m_jumpForce: 1
+  m_friction: .300000012
+  m_gravity: 9.81000042
+  m_knockbackPower: []
+  m_bonusMoveSpeed:
+  - 0
+  - 5
+  - 50
+  - 50
+  - 50
+  m_weaponPower: []
+  m_health: 
+  m_level: 0
+  m_experience: 0
+  m_expToLevel: 64000000c8000000900100002003000040060000
 --- !u!137 &13734504
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -634,7 +678,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300000, guid: 1748a98560486c949b35173db11eb1c9, type: 3}
+  m_Mesh: {fileID: 4300000, guid: fd8fd6bdd1337e14cab3d0be95057d95, type: 3}
   m_Bones:
   - {fileID: 406024}
   - {fileID: 469896}
@@ -664,13 +708,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 2.5
   m_Radius: .5
   m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982
   m_MinMoveDistance: .00100000005
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
