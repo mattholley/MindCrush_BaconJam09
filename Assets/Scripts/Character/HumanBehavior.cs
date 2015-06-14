@@ -30,7 +30,7 @@ public class HumanBehavior : CharacterBehavior {
 			}
 		}
 	}
-	
+
 	// Update is called once per frame
 	protected override void Update () {
 		base.Update();
@@ -38,6 +38,12 @@ public class HumanBehavior : CharacterBehavior {
         m_hand.transform.LookAt(m_aimTarget);
         m_Animator.SetFloat("velocity", m_velocity.magnitude);
         m_speedMagnitude = m_velocity.magnitude;
+	}
+
+	public override void SetVelocity(Vector2 velocity)
+	{
+		m_velocity.x = velocity.x * (m_moveSpeed + m_bonusMoveSpeed[m_level]);
+		m_velocity.z = velocity.y * (m_moveSpeed + m_bonusMoveSpeed[m_level]);
 	}
 
 	private GameObject m_hand;
