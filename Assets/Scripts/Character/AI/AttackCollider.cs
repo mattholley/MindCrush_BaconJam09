@@ -21,8 +21,8 @@ public class AttackCollider : MonoBehaviour {
             if (!brain.isHit)
             {
                 Debug.Log("Hit");
-                brain.m_health[brain.m_level] -= 1;
-                if (brain.m_health[brain.m_level] >= 1)
+                brain.m_currentHealth -= 1;
+				if (brain.m_currentHealth >= 1)
                 {
                     brain.HitTime = 0.0f;
                     brain.isHit = true;
