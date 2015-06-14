@@ -6,13 +6,13 @@ public class HumanBehavior : CharacterBehavior {
 	// Use this for initialization
 	protected override void Start () {
 		base.Start();
-
+        m_Animator = GetComponent<Animator>();
 		Transform hand = transform.FindChild("Hand");
 		if(hand)
 		{
 			m_hand = hand.gameObject;
 		}
-		
+
 		GameObject inventoryItemObject = GameObject.Instantiate(m_tempInventoryItemPrefab);
 		if(inventoryItemObject)
 		{
@@ -34,9 +34,11 @@ public class HumanBehavior : CharacterBehavior {
 	// Update is called once per frame
 	protected override void Update () {
 		base.Update();
-
-		m_hand.transform.LookAt(m_aimTarget);
+        Debug.Log(m_hand);
+        m_hand.transform.LookAt(m_aimTarget);
+        m_Animator.SetFloat("velocity", m_velocity.magnitude);
 	}
 
 	private GameObject m_hand;
+    private Animator m_Animator;
 }
