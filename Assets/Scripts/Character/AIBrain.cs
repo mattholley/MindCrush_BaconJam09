@@ -196,6 +196,16 @@ public class AIBrain : MonoBehaviour
         m_target = null;
         if (m_health <= 0.0f) { SetState(State.DEAD); } 
     }
+
+	protected virtual void GenerateLoot() {
+		if ((!m_itemDropped) && (m_dropTable.Length > 0)){
+			m_itemDropped = true;
+			int selectedLoot = Random.Range(0, m_dropTable.Length);
+			GameObject prefab = m_dropTable[selectedLoot];
+			Instantiate (prefab, transform.position,Quaternion.identity);
+		}
+	}
+
 	
 	protected CharacterBehavior m_characterBehavior;
 	protected GameObject m_target;
@@ -220,4 +230,6 @@ public class AIBrain : MonoBehaviour
 	public float m_wanderSteerTimeMax = 1.0f;
 	public float m_wanderMoveTimeMax;
 	public float m_stateTimer = 0.0f;
+	public GameObject[] m_dropTable;
+	public bool m_itemDropped = false;
 }

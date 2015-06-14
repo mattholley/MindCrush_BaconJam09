@@ -38,7 +38,7 @@ public class GhostAIBrain : AIBrain
 		{
 			deathEffectObject.transform.position = transform.position;
 		}
-
+		GenerateLoot();
         base.DeadState();
     }
 
