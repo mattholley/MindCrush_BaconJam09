@@ -47,6 +47,17 @@ public class HumanBehavior : CharacterBehavior {
                 gameObject.transform.FindChild("Group33741").GetComponent<Renderer>().material.color = Color.red;
             }
         }
+        else
+        {
+            if(HitTime>HitTimer)
+            {
+                GameObject.Find("GG").GetComponent<ScreenAlpha>().GoingUp = true;
+            }
+            else
+            {
+                HitTime += Time.deltaTime;
+            }
+        }
     }
 
 	public override void SetVelocity(Vector2 velocity)
