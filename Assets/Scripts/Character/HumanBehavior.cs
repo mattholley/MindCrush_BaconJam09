@@ -37,14 +37,11 @@ public class HumanBehavior : CharacterBehavior {
         Debug.Log(m_hand);
         m_hand.transform.LookAt(m_aimTarget);
         m_Animator.SetFloat("velocity", m_velocity.magnitude);
-	}
-
-	public override void SetVelocity(Vector2 velocity)
-	{
-		m_velocity.x = velocity.x * (m_moveSpeed + m_bonusMoveSpeed[m_level]);
-		m_velocity.z = velocity.y * (m_moveSpeed + m_bonusMoveSpeed[m_level]);
+        m_speedMagnitude = m_velocity.magnitude;
 	}
 
 	private GameObject m_hand;
     private Animator m_Animator;
+
+    public float m_speedMagnitude;
 }

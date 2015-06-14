@@ -1,19 +1,15 @@
 fileFormatVersion: 2
-guid: 9b9310f7ad6ca6e48b5b7fcdb5851ede
-timeCreated: 1434282148
+guid: ff5c1051c603389468b8b6ae7bf7d596
+timeCreated: 1434281618
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Group2
-    100004: Lamp
     400000: //RootNode
-    400002: Group2
-    400004: Lamp
-    2300000: Group2
-    3300000: Group2
-    4300000: Group2
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Tree
   materials:
     importMaterials: 1
     materialName: 0

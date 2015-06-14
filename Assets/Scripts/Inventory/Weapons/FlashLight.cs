@@ -52,7 +52,8 @@ public class FlashLight : WeaponItem
 		if(other.gameObject.tag == "Monster")
 		{
 			AIBrain brain = other.gameObject.GetComponent<AIBrain>();
-			brain.health -= 20000.0f;
+			brain.health -= 1.0f;
+            brain.ProcessKnockBack(gameObject, other.gameObject);
 		}
 	}
 
