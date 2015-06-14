@@ -32,10 +32,15 @@ public class GhostAIBrain : AIBrain
 
     protected override void DeadState()
     {
+		GameObject deathEffectObject = GameObject.Instantiate(m_deathEffect);
+		if(deathEffectObject)
+		{
+			deathEffectObject.transform.position = transform.position;
+		}
+
         base.DeadState();
     }
 
     [Header("Ghost Specific Properties")]
-    public GameObject m_Target;
-
+	public GameObject m_deathEffect;
 }
