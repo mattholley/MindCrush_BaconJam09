@@ -7,7 +7,8 @@ public class AIBrain : MonoBehaviour
 	public enum State
 	{
 		IDLE,
-		WANDER,
+		WANDER_STEERING,
+		WANDER_MOVING,
 		PURSUE,
 		COMBAT,
 		DEAD
@@ -34,7 +35,8 @@ public class AIBrain : MonoBehaviour
 					IdleState();
 					break;
 				}
-				case State.WANDER:
+				case State.WANDER_STEERING:
+				case State.WANDER_MOVING:
 				{
 					WanderState();
 					break;
@@ -64,50 +66,64 @@ public class AIBrain : MonoBehaviour
 		{
 			m_action = "Entering " + newState.ToString();
 			m_state = newState;
+			m_stateTimer = 0.0f;
+
+			//On State Init
+			switch(m_state)
+			{
+				case State.IDLE:
+				{
+					m_characterBehavior.Jump(0.0f);
+					m_characterBehavior.SetVelocity(Vector2.zero);
+					m_characterBehavior.SetAngularVelocity(0.0f);
+					break;
+				}
+				case State.WANDER_STEERING:
+				case State.WANDER_MOVING:
+				{
+
+					break;
+				}
+				case State.COMBAT:
+				{
+
+					break;
+				}
+				case State.DEAD:
+				{
+
+					break;
+				}
+				case State.PURSUE:
+				{
+
+					break;
+				}
+			}
 		}
 	}
 
 	protected virtual void IdleState()
 	{
-		m_idleTime += Time.deltaTime;
-		if(m_idleTime >= m_idleTimeMax)
+		m_stateTimer += Time.deltaTime;
+		if(m_stateTimer >= m_idleTimeMax)
 		{
-			SetState (State.WANDER);
-			m_idleTime = 0.0f;
+			SetState (State.WANDER_STEERING);
+			m_stateTimer = 0.0f;
 		}
 	}
 	
 	protected virtual void WanderState()
 	{
-		if(m_currentWaypointIndex < m_waypoints.Count)
+		if(m_state == State.WANDER_STEERING)
 		{
-			//Get distance to waypoint
-			//If waypoint is within distance, go to next waypoint
-			//Else
-			//Get direction to waypoint
-			//Move in direction
-			//If colliding with obstacle and not at waypoint
-			//Jump
-			
-			Vector3 target = m_waypoints[m_currentWaypointIndex].position;     
-			Vector3 distance = target - transform.position;
-			
-			//If close enough to the waypoint, go to the next one
-			if(distance.magnitude < 2.0f)
-			{
-				transform.position = target;
-				++m_currentWaypointIndex;
-			}
-			else
-			{
-				Vector2 direction = new Vector2(distance.x, distance.z).normalized;
-				m_characterBehavior.SetVelocity(ref direction);
-			}
+
 		}
 		else
+		if(m_state == State.WANDER_MOVING)
 		{
-			SetState(State.IDLE);
-			m_currentWaypointIndex = 0;
+			Vector3 direction = transform.forward;
+			m_characterBehavior.SetVelocity(new Vector2(direction.x, direction.z));
 		}
 	}
 	
@@ -116,18 +132,14 @@ public class AIBrain : MonoBehaviour
 		Vector3 target = m_target.transform.position;
 		
 		Vector3 distance = target - transform.position;
-		Vector2 distance2D = new Vector2(distance.x, distance.z);
-		
 		if(distance.sqrMagnitude >= 100.0f)
 		{
 			SetState(State.PURSUE);
 			return;
 		}
-		
-		Vector2 direction = distance2D.normalized;
-		
+
 		m_characterBehavior.Jump(1.0f);
-		m_characterBehavior.SetVelocity(ref direction);
+		m_characterBehavior.SetVelocity(new Vector2(distance.x, distance.z).normalized);
 	}
 	
 	protected virtual void DeadState()
@@ -140,16 +152,13 @@ public class AIBrain : MonoBehaviour
 		Vector3 target = m_target.transform.position;
 		
 		Vector3 distance = target - transform.position;
-		Vector2 distance2D = new Vector2(distance.x, distance.z);
-		
 		if(distance.sqrMagnitude < 100.0f)
 		{
 			SetState(State.COMBAT);
 			return;
 		}
-		
-		Vector2 direction = distance2D.normalized;
-		m_characterBehavior.SetVelocity(ref direction);
+
+		m_characterBehavior.SetVelocity(new Vector2(distance.x, distance.z).normalized);
 	}
 
 	public void ProcessSensorResult(ref SensorResult result)
@@ -190,8 +199,9 @@ public class AIBrain : MonoBehaviour
 	public int state { get { return (int)m_state; } }
 
 	[Header("AI Specific Properties")]
-	public List<Transform> m_waypoints;
-	public int m_currentWaypointIndex = 0;
+	public float m_steerSpeed = 5.0f;
 	public float m_idleTimeMax = 5.0f;
-	public float m_idleTime = 0.0f;
+	public float m_wanderSteerTimeMax = 1.0f;
+	public float m_wanderMoveTimeMax;
+	public float m_stateTimer = 0.0f;
 }
