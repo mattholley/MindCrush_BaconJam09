@@ -11,10 +11,12 @@ GameObject:
   - 33: {fileID: 3340390}
   - 23: {fileID: 2379890}
   - 143: {fileID: 14320002}
-  - 135: {fileID: 13589134}
   - 114: {fileID: 11414872}
   - 114: {fileID: 11449024}
   - 114: {fileID: 11491178}
+  - 54: {fileID: 5473700}
+  - 114: {fileID: 11428558}
+  - 136: {fileID: 13641144}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Monster
@@ -146,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.8188028, y: 16.8788452, z: -51.5386887}
+  m_LocalPosition: {x: -49.0165939, y: 38.2341156, z: 39.9827499}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 403390}
@@ -184,6 +186,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110422}
   m_Mesh: {fileID: 4300000, guid: 9b9310f7ad6ca6e48b5b7fcdb5851ede, type: 3}
+--- !u!54 &5473700
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110422}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &6494124
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -217,19 +234,20 @@ MonoBehaviour:
   m_wanderMoveTimeMax: 0
   m_stateTimer: 0
   m_dropTable:
-  - {fileID: 187344, guid: 0e76639db92b1a34b9298430a1ab95e4, type: 2}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  m_guaranteedDrops: []
   m_itemDropped: 0
   m_deathEffect: {fileID: 169064, guid: c1e786b83dd430d4da2dae9b8c045045, type: 2}
+--- !u!114 &11428558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609837585e4736f47a58eab36dfe48da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11449024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e86856cd599ee4c972641b46c605b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_moveSpeedModifier: 1
   m_tempInventoryItemPrefab: {fileID: 0}
   m_aimTarget: {x: 0, y: 0, z: 0}
   m_moveSpeed: 30
@@ -284,9 +303,8 @@ MonoBehaviour:
   m_knockbackPower: []
   m_bonusMoveSpeed: []
   m_weaponPower: []
-  m_maxHealth: 0a000000
-  m_currentHealth: 10
-  m_level: 0
+  m_health: 03000000030000000400000004000000050000000500000006000000060000000700000007000000080000000800000009000000090000000a0000000a0000000b0000000c0000000d0000000e000000
+  m_level: 1
   m_experience: 0
   m_expToLevel: 
 --- !u!114 &11497692
@@ -312,18 +330,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &13589134
-SphereCollider:
+--- !u!136 &13641144
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110422}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 1.33000004, z: 0}
+  m_Radius: 1.26381958
+  m_Height: 4.00010109
+  m_Direction: 1
+  m_Center: {x: .0239035487, y: 2.03803921, z: -.373682976}
 --- !u!143 &14320002
 CharacterController:
   m_ObjectHideFlags: 1
@@ -1428,15 +1447,11 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: m_health.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_dropTable.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_maxHealth.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_guaranteedDrops.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -1466,58 +1481,123 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_dropTable.Array.data[0]
       value: 
-      objectReference: {fileID: 187344, guid: 0e76639db92b1a34b9298430a1ab95e4, type: 2}
+      objectReference: {fileID: 11401104, guid: 27cace28c9dd8e74185a18b35c9333ee,
+        type: 2}
     - target: {fileID: 0}
-      propertyPath: m_dropTable.Array.data[1]
-      value: 
+      propertyPath: m_health.Array.data[0]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_guaranteedDrops.Array.data[0]
-      value: 
-      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_dropTable.Array.data[2]
-      value: 
+      propertyPath: m_health.Array.data[1]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_dropTable.Array.data[3]
-      value: 
+      propertyPath: m_health.Array.data[2]
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_dropTable.Array.data[4]
-      value: 
+      propertyPath: m_health.Array.data[3]
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_dropTable.Array.data[5]
-      value: 
+      propertyPath: m_health.Array.data[4]
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_dropTable.Array.data[6]
-      value: 
-      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+      propertyPath: m_health.Array.data[5]
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_dropTable.Array.data[7]
-      value: 
-      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+      propertyPath: m_health.Array.data[6]
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_dropTable.Array.data[8]
-      value: 
-      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+      propertyPath: m_health.Array.data[7]
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_dropTable.Array.data[9]
-      value: 
-      objectReference: {fileID: 113486, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
+      propertyPath: m_health.Array.data[8]
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_level
+      propertyPath: m_health.Array.data[9]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_health.Array.data[10]
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_health.Array.data[11]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_health.Array.data[12]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_health.Array.data[13]
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_health.Array.data[14]
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_health.Array.data[15]
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_health.Array.data[16]
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_health.Array.data[17]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_health.Array.data[18]
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_health.Array.data[19]
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_maxHealth.Array.data[0]
-      value: 10
+      propertyPath: m_Size.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_currentHealth
-      value: 10
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

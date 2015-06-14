@@ -9,24 +9,33 @@ public class FlashLight : WeaponItem
 	{
 		m_light = GetComponentInChildren<Light>();
 		m_lightCollider = GetComponentInChildren<Collider>();
-		//m_lightCollider.enabled = false;
 		m_light.color = Color.gray;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if(itemEnabled)
-		{
-
-		}
 	}
 
 	protected override void Enable() 
 	{
 		base.Enable();
 		m_light.color = Color.white;
-		//m_lightCollider.enabled = true;
+
+		GameObject projectile = GameObject.Instantiate(m_projectile);
+		if(projectile)
+		{
+			projectile.transform.position = transform.position + (transform.forward * 1.0f);
+			projectile.transform.rotation = transform.rotation;
+
+			Rigidbody rigidbody = projectile.GetComponent<Rigidbody>();
+			if(rigidbody)
+			{
+				Vector3 aimVec = transform.parent.forward;
+				aimVec.y = 0.0f;
+				rigidbody.AddForce(aimVec.normalized * m_shootForce);
+			}
+		}
 	}
 
 	protected override void Disable()
@@ -34,20 +43,12 @@ public class FlashLight : WeaponItem
 		base.Disable();
 		m_light.enabled = true;
         m_light.color = Color.gray;
-		//m_lightCollider.enabled = false;
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
 		if(other.gameObject.tag == "Monster")
 		{
-			if(itemEnabled)
-			{
-				AIBrain brain = other.gameObject.GetComponent<AIBrain>();
-				brain.health -= 1.0f;
-	            brain.ProcessKnockBack(gameObject, other.gameObject);
-			}
-
 			CharacterBehavior character = other.gameObject.GetComponent<CharacterBehavior>();
 			character.m_moveSpeedModifier = 0.25f;
 		}
@@ -64,8 +65,7 @@ public class FlashLight : WeaponItem
 
 	private Light m_light;
 	private Collider m_lightCollider;
-	private float m_strobeTimer = 0.0f;
-
-    public float m_strobeTimerMax = 0.02f;
+	public float m_shootForce = 200.0f;
     public GameObject m_emittedLight;
+	public GameObject m_projectile;
 }
