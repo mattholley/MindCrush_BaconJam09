@@ -33,13 +33,12 @@ public class GhostAIBrain : AIBrain
 
     protected override void DeadState()
     {
-        Debug.Log(health);
 		GameObject deathEffectObject = GameObject.Instantiate(m_deathEffect);
 		if(deathEffectObject)
 		{
 			deathEffectObject.transform.position = transform.position;
 		}
-
+		GenerateLoot();
         base.DeadState();
     }
 

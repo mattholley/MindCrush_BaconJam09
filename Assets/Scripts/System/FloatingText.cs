@@ -19,7 +19,6 @@ public class FloatingText : MonoBehaviour {
 		textComponent = GetComponent<Text>();
 		textComponent.text = text;
 		textColor = textComponent.color;
-		target = GameObject.FindGameObjectWithTag("Player");
 		transform.position = Camera.main.WorldToScreenPoint( target.transform.position + Vector3.up * heightOffset);
 		height = heightOffset;
 	}
