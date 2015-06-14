@@ -24,6 +24,9 @@ public class HumanPlayerController : MonoBehaviour {
 		//Item
 		m_playerBehavior.SetIsItemEnabled(Input.GetButton("Fire1"));
 
+		if (Input.GetButtonUp("Fire1"))
+			ScreenText.FloatText("Pew!!!", this.gameObject);
+
 		//Movement
 		Vector2 direction = Vector2.zero;
 		direction.x += Input.GetAxis("Horizontal");
