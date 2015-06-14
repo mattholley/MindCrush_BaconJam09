@@ -51,13 +51,14 @@ public class Story : MonoBehaviour {
 	}
 
 	void QueueMessageForLevel() {
-		if (queue.Count <= 0) {
-			queue.Enqueue(messages[GameVars.GameLevel]);
-			StartCoroutine(DisplayMessages());
-		} else {
-			queue.Enqueue(messages[GameVars.GameLevel]);
+		if (messages.ContainsKey(GameVars.GameLevel))
+		{
+			if (queue.Count <= 0) {
+				queue.Enqueue(messages[GameVars.GameLevel]);
+				StartCoroutine(DisplayMessages());
+			} else {
+				queue.Enqueue(messages[GameVars.GameLevel]);
+			}
 		}
-
-
 	}
 }
