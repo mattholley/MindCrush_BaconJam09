@@ -5,6 +5,9 @@ public class LevelGenerator : MonoBehaviour {
 
 	public GameObject levelPrefab;
 	public GameObject generationController;
+	public delegate void NewLevelPrimitiveAction();
+	public static event NewLevelPrimitiveAction OnNewLevelPrimitve;
+
 
 	private float prefabWidth;
 	private LinkedList<GameObject> levelPrimitives;
@@ -42,7 +45,7 @@ public class LevelGenerator : MonoBehaviour {
 			
 			foreach (Transform child in transform)
 			{
-				child.Translate(0.0f, 0.0f, -threshold);
+				child.Translate(0.0f, 0.0f, -threshold, Space.World);
 			}
 
 			return true;
@@ -60,6 +63,10 @@ public class LevelGenerator : MonoBehaviour {
 		GameObject newPrefab = (GameObject)Instantiate(levelPrefab, spawnPos, Quaternion.identity);
 		newPrefab.transform.parent = transform;
 		levelPrimitives.AddFirst(newPrefab);
+
+		if (OnNewLevelPrimitve != null) {
+			OnNewLevelPrimitve();
+		}
 
 	}
 

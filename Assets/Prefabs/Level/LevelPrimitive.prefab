@@ -27,6 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 409208}
   - 65: {fileID: 6595972}
+  - 114: {fileID: 11414616}
   m_Layer: 0
   m_Name: LevelPrimitive
   m_TagString: Untagged
@@ -114,13 +115,57 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11414616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d2458c2c84381347a60a0271a13eade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeFab: {fileID: 107504, guid: ad4445e57417cd9459579346a1699eb8, type: 2}
+  monsterPrefab:
+  - {fileID: 110422, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
+  - {fileID: 162722, guid: 0efe01a7a9a19d04d943e8a4d0410d1d, type: 2}
+  groundPrefab: {fileID: 133222, guid: 3d59b6ac489417b448b4827674bce109, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: monsterPrefab.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: groundPrefab
+      value: 
+      objectReference: {fileID: 133222, guid: 3d59b6ac489417b448b4827674bce109, type: 2}
+    - target: {fileID: 0}
+      propertyPath: treeFab
+      value: 
+      objectReference: {fileID: 107504, guid: ad4445e57417cd9459579346a1699eb8, type: 2}
+    - target: {fileID: 0}
+      propertyPath: testLevel
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: monsterPrefab
+      value: 
+      objectReference: {fileID: 103576, guid: 302aa3309d8c7fe4690554fff86c8e45, type: 2}
+    - target: {fileID: 0}
+      propertyPath: monsterPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 110422, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
+    - target: {fileID: 0}
+      propertyPath: monsterPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 162722, guid: 0efe01a7a9a19d04d943e8a4d0410d1d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170476}
