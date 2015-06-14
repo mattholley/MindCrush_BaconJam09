@@ -8,6 +8,9 @@ public class GhostAIBrain : AIBrain
     protected override void Start()
     {
         base.Start();
+
+        Debug.Log(health);
+        health = 20.0f;
     }
 
     protected override void Update()
@@ -32,6 +35,7 @@ public class GhostAIBrain : AIBrain
 
     protected override void DeadState()
     {
+        Debug.Log(health);
 		GameObject deathEffectObject = GameObject.Instantiate(m_deathEffect);
 		if(deathEffectObject)
 		{
