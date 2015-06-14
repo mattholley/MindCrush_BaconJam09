@@ -18,6 +18,8 @@ public class ProjectileScript : MonoBehaviour
 		{
 			Destroy (gameObject);
 		}
+
+		transform.localScale = transform.localScale + (new Vector3(1.0f, 1.0f, 1.0f) * 0.7f);
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -31,5 +33,5 @@ public class ProjectileScript : MonoBehaviour
 		}
 	}
 
-	private float m_deathTimer = 5.0f;
+	private float m_deathTimer = 1.0f;
 }
