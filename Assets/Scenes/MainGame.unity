@@ -647,7 +647,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 462240, guid: 5f677b24c7168a242978cead87b25b30, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 10843688, guid: 5f677b24c7168a242978cead87b25b30, type: 2}
       propertyPath: m_Intensity
@@ -812,7 +812,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22499022, guid: 859ad22219f2cb44c85e4a8a19840c6b, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 22499022, guid: 859ad22219f2cb44c85e4a8a19840c6b, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -1081,7 +1081,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 494774, guid: f93545f170ce85342978b3b20563cd44, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11438298, guid: f93545f170ce85342978b3b20563cd44, type: 2}
       propertyPath: lightRate
