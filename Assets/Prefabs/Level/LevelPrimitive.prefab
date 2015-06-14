@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2458c2c84381347a60a0271a13eade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treeFab: {fileID: 107504, guid: ad4445e57417cd9459579346a1699eb8, type: 2}
+  treeFab: {fileID: 181362, guid: ad4445e57417cd9459579346a1699eb8, type: 2}
   monsterPrefab:
   - {fileID: 110422, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
   groundPrefab: {fileID: 133222, guid: 3d59b6ac489417b448b4827674bce109, type: 2}
@@ -148,7 +148,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: treeFab
       value: 
-      objectReference: {fileID: 107504, guid: ad4445e57417cd9459579346a1699eb8, type: 2}
+      objectReference: {fileID: 181362, guid: ad4445e57417cd9459579346a1699eb8, type: 2}
     - target: {fileID: 0}
       propertyPath: testLevel
       value: 500
