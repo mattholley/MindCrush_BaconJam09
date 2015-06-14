@@ -186,6 +186,8 @@ MonoBehaviour:
   m_wanderSteerTimeMax: 1
   m_wanderMoveTimeMax: 0
   m_stateTimer: 0
+  m_dropTable:
+  - {fileID: 11401104, guid: 27cace28c9dd8e74185a18b35c9333ee, type: 2}
   m_deathEffect: {fileID: 169064, guid: c1e786b83dd430d4da2dae9b8c045045, type: 2}
 --- !u!114 &11449024
 MonoBehaviour:
@@ -305,6 +307,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: m_dropTable.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -328,6 +334,11 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: a8b605fa964910e468960925229ba79a, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_dropTable.Array.data[0]
+      value: 
+      objectReference: {fileID: 11401104, guid: 27cace28c9dd8e74185a18b35c9333ee,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110422}

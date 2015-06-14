@@ -12,7 +12,7 @@ public class TestItem : GenericItem {
 	}
 
 	protected override void OnTouched(GameObject entity){
-		Debug.Log("Test override ontouched");
+		//Debug.Log("Test override ontouched");
 		base.OnTouched(entity);
 	}
 
@@ -30,6 +30,6 @@ public class TestItem : GenericItem {
 	}
 
 	protected override void OnDestroy(){
-		Debug.Log ("Tracing this before destroying.");
+		//Debug.Log ("Tracing this before destroying.");
 	}
 }

@@ -27,6 +27,7 @@ GameObject:
   - 4: {fileID: 405380}
   - 198: {fileID: 19846768}
   - 199: {fileID: 19900354}
+  - 114: {fileID: 11466472}
   m_Layer: 0
   m_Name: GhostDeath
   m_TagString: Untagged
@@ -59,6 +60,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 405380}
   m_RootOrder: 0
+--- !u!114 &11466472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7756b239d18a6c0479de0c942a10a331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &19843488
 ParticleSystem:
   m_ObjectHideFlags: 1
