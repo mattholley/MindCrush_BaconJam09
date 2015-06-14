@@ -83,7 +83,7 @@ public class PlayerOccluder : MonoBehaviour {
 		Debug.Assert(obj != null);
 		if(obj != null)
 		{
-			Debug.Log (obj.name + " is " + isOccluded);
+			//Debug.Log (obj.name + " is " + isOccluded);
 			obj.GetComponent<Occludee>().SetOccluded(isOccluded);
 
 			if(isOccluded)
@@ -99,7 +99,7 @@ public class PlayerOccluder : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		Debug.Log(other.gameObject.name);
+		//Debug.Log(other.gameObject.name);
 		if(other.tag == "PlayerOcclude")
 		{
 			m_potentiallyVisible.Add(other.gameObject);

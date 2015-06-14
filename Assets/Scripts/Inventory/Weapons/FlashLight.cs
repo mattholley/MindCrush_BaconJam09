@@ -10,6 +10,7 @@ public class FlashLight : WeaponItem
 		m_light = GetComponentInChildren<Light>();
 		m_lightCollider = GetComponentInChildren<Collider>();
 		m_lightCollider.enabled = false;
+		m_light.color = Color.gray;
 	}
 	
 	// Update is called once per frame
@@ -17,33 +18,23 @@ public class FlashLight : WeaponItem
 	{
 		if(itemEnabled)
 		{
-			m_strobeTimer += Time.deltaTime;
-			if(m_strobeTimer >= m_strobeTimerMax)
-			{
-				m_light.enabled = !m_light.enabled;
 
-				if(m_light.enabled)
-				{
-					m_light.color = (m_light.color == Color.magenta ) ? Color.white : Color.magenta;
-				}
-
-				m_strobeTimer = 0.0f;
-			}
 		}
 	}
 
 	protected override void Enable() 
 	{
 		base.Enable();
-		m_light.color = Color.magenta;
+		m_light.color = Color.white;
 		m_lightCollider.enabled = true;
+		print ("PEW!!");
 	}
 
 	protected override void Disable()
 	{
 		base.Disable();
 		m_light.enabled = true;
-        m_light.color = Color.white;
+        m_light.color = Color.gray;
 		m_lightCollider.enabled = false;
 	}
 
