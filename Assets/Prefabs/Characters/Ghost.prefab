@@ -186,7 +186,7 @@ MonoBehaviour:
   m_wanderSteerTimeMax: 1
   m_wanderMoveTimeMax: 0
   m_stateTimer: 0
-  m_Target: {fileID: 0}
+  m_deathEffect: {fileID: 169064, guid: c1e786b83dd430d4da2dae9b8c045045, type: 2}
 --- !u!114 &11449024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -238,6 +238,9 @@ MonoBehaviour:
   m_jumpForce: 1
   m_friction: .300000012
   m_gravity: 3.27999997
+  m_level: 1
+  m_experience: 0
+  m_expToLevel: 
 --- !u!114 &11497692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -313,6 +316,10 @@ Prefab:
       propertyPath: m_gravity
       value: 3.27999997
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_deathEffect
+      value: 
+      objectReference: {fileID: 169064, guid: c1e786b83dd430d4da2dae9b8c045045, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110422}
