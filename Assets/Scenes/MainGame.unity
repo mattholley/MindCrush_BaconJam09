@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 77585352}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 311747248}
   - 64: {fileID: 311747249}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 356907587}
   - 64: {fileID: 356907588}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 403581384}
   - 64: {fileID: 403581385}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -998,7 +998,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2020916941}
   - 64: {fileID: 2020916942}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
