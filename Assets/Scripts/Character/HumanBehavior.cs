@@ -41,14 +41,6 @@ public class HumanBehavior : CharacterBehavior {
 		m_velocity.z = velocity.y * (m_moveSpeed + m_bonusMoveSpeed[m_level]);
 	}
 
-	public override void GainHealth (int amount)
-	{
-		m_currentHealth += amount;
-		if (m_currentHealth > m_maxHealth[m_level]){
-			m_currentHealth = m_maxHealth[m_level];
-		}
-	}
-
     private Animator m_Animator;
 	public GameObject m_hand;
 }

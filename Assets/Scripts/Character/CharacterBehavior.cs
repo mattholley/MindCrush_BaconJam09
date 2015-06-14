@@ -86,7 +86,12 @@ public class CharacterBehavior : MonoBehaviour
 		}
 	}
 
-	public virtual void GainHealth(int amount){}
+	public virtual void GainHealth(int amount){
+		m_currentHealth += amount;
+		if (m_currentHealth > m_maxHealth[m_level]){
+			m_currentHealth = m_maxHealth[m_level];
+		}
+	}
 
 	protected CharacterController m_controller;
 	protected InventoryItem m_equippedItem;
