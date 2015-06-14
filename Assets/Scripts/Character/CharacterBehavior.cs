@@ -23,7 +23,12 @@ public class CharacterBehavior : MonoBehaviour
 		ProcessMovement();
 	}
 
-	public void SetVelocity(ref Vector2 velocity)
+	public void SetAngularVelocity(float angularVelocity)
+	{
+		m_angularVelocity = angularVelocity;
+	}
+
+	public void SetVelocity(Vector2 velocity)
 	{
 		m_velocity.x = velocity.x * m_moveSpeed;
 		m_velocity.z = velocity.y * m_moveSpeed;
@@ -58,6 +63,16 @@ public class CharacterBehavior : MonoBehaviour
 			m_velocity.z = 0.0f;
 		}
 
+		Vector3 distance = (m_aimTarget - transform.position);
+
+		float crossVal = Mathf.Sign(Vector3.Cross(transform.forward, distance.normalized).y);
+		float dotVal = Vector3.Dot(transform.forward, distance.normalized);
+
+		m_angularVelocity = crossVal * m_rotateSpeed;
+
+		Debug.Log (m_angularVelocity);
+
+		transform.Rotate(new Vector3(0.0f, m_angularVelocity * Time.deltaTime, 0.0f));
 		m_controller.Move(m_velocity);
 
 		if(!m_controller.isGrounded)
@@ -73,10 +88,12 @@ public class CharacterBehavior : MonoBehaviour
 	protected CharacterController m_controller;
 	protected InventoryItem m_equippedItem;
 	protected Vector3 m_velocity;
+	protected float m_angularVelocity;
 
 	public GameObject m_tempInventoryItemPrefab;
 	public Vector3 m_aimTarget;
 	public float m_moveSpeed = 30.0f;
+	public float m_rotateSpeed = 30.0f;
 	public float m_jumpForce = 1.0f;
 	public float m_friction = 0.3f;
 	public float m_gravity = 9.81f;

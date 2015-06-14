@@ -128,10 +128,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treeFab: {fileID: 107504, guid: ad4445e57417cd9459579346a1699eb8, type: 2}
   monsterPrefab:
-  - {fileID: 103576, guid: 302aa3309d8c7fe4690554fff86c8e45, type: 2}
-  - {fileID: 195404, guid: 36705d8c74c63924789b49a31493b33c, type: 2}
+  - {fileID: 110422, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
+  - {fileID: 162722, guid: 0efe01a7a9a19d04d943e8a4d0410d1d, type: 2}
   groundPrefab: {fileID: 133222, guid: 3d59b6ac489417b448b4827674bce109, type: 2}
-  testLevel: 500
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -162,11 +161,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: monsterPrefab.Array.data[0]
       value: 
-      objectReference: {fileID: 103576, guid: 302aa3309d8c7fe4690554fff86c8e45, type: 2}
+      objectReference: {fileID: 110422, guid: 71f872aaa3d565d41bb4288618726b18, type: 2}
     - target: {fileID: 0}
       propertyPath: monsterPrefab.Array.data[1]
       value: 
-      objectReference: {fileID: 195404, guid: 36705d8c74c63924789b49a31493b33c, type: 2}
+      objectReference: {fileID: 162722, guid: 0efe01a7a9a19d04d943e8a4d0410d1d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170476}

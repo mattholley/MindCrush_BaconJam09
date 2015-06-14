@@ -33,9 +33,8 @@ public class HumanPlayerController : MonoBehaviour {
 		{
 			m_playerBehavior.Jump(Input.GetAxis("Jump"));
 		}
-		//Debug.Log(Input.GetAxis("Jump"));
 
-		m_playerBehavior.SetVelocity(ref direction);
+		m_playerBehavior.SetVelocity(direction);
 	}
 
 	private HumanBehavior m_playerBehavior;
