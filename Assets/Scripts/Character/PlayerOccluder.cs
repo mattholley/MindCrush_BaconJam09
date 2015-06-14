@@ -41,7 +41,6 @@ public class PlayerOccluder : MonoBehaviour {
 		Debug.Assert(obj != null);
 		if(obj != null)
 		{
-			Debug.Log (obj.name + " is " + isOccluded);
 			obj.GetComponent<Occludee>().SetOccluded(isOccluded);
 		}
 	}
